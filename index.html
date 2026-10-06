@@ -1,153 +1,1024 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Урок: Знакомство с котами</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, sans-serif;
-      background: #f7f8fc;
-      color: #222;
-      line-height: 1.6;
-    }
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 32px 24px 80px;
-    }
-    header {
-      text-align: center;
-      padding: 40px 0 20px;
-      background: linear-gradient(135deg, #4f7cff, #8a4fff);
-      color: white;
-      border-radius: 0 0 24px 24px;
-      margin-bottom: 32px;
-    }
-    header h1 { margin: 0 0 8px; font-size: 2rem; }
-    header p { margin: 0; opacity: 0.9; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Family — English Lesson A1–A2</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Baloo+2:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    section {
-      background: white;
-      border-radius: 16px;
-      padding: 24px 28px;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
-    }
-    section h2 {
-      margin-top: 0;
-      color: #4f7cff;
-      font-size: 1.3rem;
-    }
-    section img {
-      max-width: 100%;
-      border-radius: 12px;
-      margin: 12px 0;
-      display: block;
-    }
-    blockquote {
-      border-left: 4px solid #4f7cff;
-      background: #eef2ff;
-      margin: 16px 0;
-      padding: 12px 16px;
-      border-radius: 0 8px 8px 0;
-      font-style: italic;
-    }
-    mark { background: #ffe58a; padding: 2px 4px; border-radius: 4px; }
-    ul li, ol li { margin-bottom: 6px; }
+  :root {
+    --c1: #6a8dff;
+    --c1-dark: #4a6ee0;
+    --c2: #ffb84f;
+    --c2-dark: #e69a2c;
+    --c3: #2a2f45;
+    --c-pink: #ff8ec7;
+    --c-green: #6ddfa8;
+    --c-purple: #a78bfa;
+    --bg: #f6f8ff;
+    --white: #fff;
+    --shadow-sm: 0 4px 12px rgba(106, 141, 255, .12);
+    --shadow-md: 0 10px 30px rgba(106, 141, 255, .15);
+    --shadow-lg: 0 20px 50px rgba(106, 141, 255, .2);
+  }
 
-    .quiz {
-      background: #11162b;
-      color: white;
-    }
-    .quiz h2 { color: #8aaeff; }
-    .quiz button {
-      background: #4f7cff;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      padding: 10px 18px;
-      font-size: 1rem;
-      cursor: pointer;
-      margin: 6px 6px 6px 0;
-    }
-    .quiz button:hover { background: #3a63d8; }
-    #quizResult {
-      margin-top: 12px;
-      font-size: 1.1rem;
-      min-height: 28px;
-    }
-    .correct { color: #6ee7a8; }
-    .wrong { color: #ff8a8a; }
-  </style>
+  body {
+    font-family: 'Nunito', 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--c3);
+    line-height: 1.65;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  /* ===== Декоративный фон ===== */
+  body::before {
+    content: '';
+    position: fixed;
+    top: -200px; right: -200px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(255,184,79,.35), transparent 70%);
+    border-radius: 50%;
+    z-index: -1;
+    animation: float 8s ease-in-out infinite;
+  }
+  body::after {
+    content: '';
+    position: fixed;
+    bottom: -200px; left: -200px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(167,139,250,.3), transparent 70%);
+    border-radius: 50%;
+    z-index: -1;
+    animation: float 10s ease-in-out infinite reverse;
+  }
+  @keyframes float {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(30px, -30px); }
+  }
+
+  /* ===== NAV ===== */
+  nav {
+    position: sticky;
+    top: 0;
+    background: rgba(255,255,255,.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 14px 16px;
+    box-shadow: 0 2px 20px rgba(106,141,255,.08);
+    z-index: 100;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+  }
+  nav button {
+    background: var(--white);
+    border: 2px solid #e4e9ff;
+    border-radius: 24px;
+    padding: 9px 18px;
+    font-size: 0.88rem;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all .25s cubic-bezier(.4, 0, .2, 1);
+    color: var(--c3);
+  }
+  nav button:hover {
+    background: #eef2ff;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+  }
+  nav button.active {
+    background: linear-gradient(135deg, var(--c1), var(--c-purple));
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 6px 18px rgba(106,141,255,.4);
+    transform: translateY(-2px);
+  }
+
+  /* ===== PROGRESS ===== */
+  .progress-wrap {
+    max-width: 940px;
+    margin: 20px auto 0;
+    padding: 0 24px;
+  }
+  .progress-bar {
+    height: 12px;
+    background: #e4e9ff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: inset 0 2px 4px rgba(106,141,255,.1);
+  }
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--c1), var(--c-pink), var(--c2));
+    background-size: 200% 100%;
+    width: 0%;
+    transition: width .5s cubic-bezier(.4, 0, .2, 1);
+    border-radius: 12px;
+    animation: shimmer 3s linear infinite;
+  }
+  @keyframes shimmer {
+    0% { background-position: 0% 0; }
+    100% { background-position: 200% 0; }
+  }
+  .progress-label {
+    text-align: right;
+    font-size: 0.82rem;
+    margin-top: 6px;
+    color: #8b93b8;
+    font-weight: 700;
+  }
+
+  /* ===== SECTIONS ===== */
+  main {
+    max-width: 940px;
+    margin: 0 auto;
+    padding: 28px 24px 100px;
+  }
+  section {
+    display: none;
+    background: var(--white);
+    border-radius: 28px;
+    padding: 40px 36px;
+    box-shadow: var(--shadow-md);
+    animation: fadeIn .5s cubic-bezier(.4, 0, .2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, var(--c1), var(--c-pink), var(--c2));
+  }
+  section.active { display: block; }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px) scale(.98); }
+    to { opacity: 1; transform: none; }
+  }
+
+  /* ===== HEADINGS ===== */
+  h1 {
+    font-family: 'Baloo 2', 'Nunito', sans-serif;
+    font-size: 1.9rem;
+    font-weight: 800;
+    color: var(--c3);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  h1 .en {
+    display: block;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #8b93b8;
+    margin-top: 4px;
+    padding-left: 56px;
+  }
+  h2 {
+    font-family: 'Baloo 2', 'Nunito', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin: 26px 0 14px;
+    color: var(--c1-dark);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .stage-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--c2), var(--c-pink));
+    color: white;
+    width: 44px; height: 44px;
+    border-radius: 14px;
+    font-weight: 800;
+    font-size: 1.3rem;
+    font-family: 'Baloo 2', sans-serif;
+    box-shadow: 0 6px 16px rgba(255,184,79,.4);
+    transform: rotate(-4deg);
+    flex-shrink: 0;
+  }
+
+  p { margin: 10px 0; font-size: 1.05rem; }
+  .ru { color: #8b93b8; font-size: 0.95rem; font-style: italic; }
+
+  /* ===== CARDS ===== */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .card {
+    background: linear-gradient(145deg, #f6f8ff, #eef2ff);
+    border-radius: 20px;
+    padding: 22px 16px;
+    text-align: center;
+    border: 2px solid transparent;
+    transition: all .3s cubic-bezier(.4, 0, .2, 1);
+    cursor: default;
+    position: relative;
+  }
+  .card:hover {
+    border-color: var(--c1);
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: var(--shadow-md);
+  }
+  .card .emoji {
+    font-size: 2.8rem;
+    display: block;
+    margin-bottom: 8px;
+    transition: transform .3s;
+  }
+  .card:hover .emoji { transform: scale(1.15) rotate(-6deg); }
+  .card .word {
+    font-weight: 800;
+    font-size: 1.05rem;
+    color: var(--c3);
+    font-family: 'Baloo 2', sans-serif;
+  }
+  .card .trans { font-size: 0.85rem; color: #8b93b8; margin-top: 4px; }
+
+  /* ===== TABLE ===== */
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 18px 0;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+  th, td { padding: 14px 18px; text-align: left; }
+  th {
+    background: linear-gradient(135deg, var(--c1), var(--c-purple));
+    color: white;
+    font-weight: 800;
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 1.05rem;
+  }
+  td { background: white; border-bottom: 1px solid #eef2ff; font-size: 1rem; }
+  tr:last-child td { border-bottom: none; }
+  tr:nth-child(even) td { background: #f9faff; }
+  td b { color: var(--c1-dark); }
+
+  /* ===== QUIZ ===== */
+  .quiz-item {
+    background: linear-gradient(145deg, #f9faff, #eef2ff);
+    border-radius: 20px;
+    padding: 20px 22px;
+    margin-bottom: 14px;
+    transition: all .3s;
+    border: 2px solid transparent;
+  }
+  .quiz-item:hover {
+    border-color: #dfe5ff;
+    box-shadow: var(--shadow-sm);
+  }
+  .quiz-item .q {
+    font-weight: 800;
+    margin-bottom: 12px;
+    font-size: 1.05rem;
+    color: var(--c3);
+    font-family: 'Baloo 2', sans-serif;
+  }
+  .quiz-item button {
+    background: white;
+    border: 2px solid #dfe5ff;
+    border-radius: 14px;
+    padding: 10px 20px;
+    margin: 4px 8px 4px 0;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 0.98rem;
+    cursor: pointer;
+    transition: all .2s;
+    color: var(--c3);
+  }
+  .quiz-item button:hover {
+    border-color: var(--c1);
+    background: #eef2ff;
+    transform: translateY(-2px);
+  }
+  .quiz-item button.correct {
+    background: linear-gradient(135deg, #6ddfa8, #4dc98a);
+    border-color: transparent;
+    color: white;
+    box-shadow: 0 6px 16px rgba(109,223,168,.4);
+  }
+  .quiz-item button.wrong {
+    background: linear-gradient(135deg, #ff8e9c, #e74c5e);
+    border-color: transparent;
+    color: white;
+  }
+  .quiz-item .feedback {
+    margin-top: 10px;
+    font-size: 0.95rem;
+    min-height: 22px;
+    font-weight: 700;
+  }
+
+  /* ===== STICKER INPUT ===== */
+  .sticker-input {
+    display: flex;
+    gap: 10px;
+    margin: 14px 0;
+  }
+  .sticker-input input {
+    flex: 1;
+    padding: 14px 20px;
+    border-radius: 16px;
+    border: 2px solid #dfe5ff;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    background: #f9faff;
+    transition: all .2s;
+  }
+  .sticker-input input:focus {
+    outline: none;
+    border-color: var(--c1);
+    background: white;
+    box-shadow: 0 0 0 4px rgba(106,141,255,.1);
+  }
+  .sticker-input button {
+    background: linear-gradient(135deg, var(--c1), var(--c-purple));
+    color: white;
+    border: none;
+    border-radius: 16px;
+    padding: 0 24px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all .2s;
+    box-shadow: 0 6px 16px rgba(106,141,255,.3);
+  }
+  .sticker-input button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(106,141,255,.4);
+  }
+  .stickers { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+  .sticker {
+    background: linear-gradient(135deg, var(--c2), #ffd88a);
+    color: var(--c3);
+    padding: 12px 18px;
+    border-radius: 14px;
+    font-weight: 800;
+    font-family: 'Baloo 2', sans-serif;
+    box-shadow: 0 6px 0 var(--c2-dark), 0 8px 16px rgba(255,184,79,.3);
+    animation: pop .4s cubic-bezier(.4, 0, .2, 1);
+    transform: rotate(-1deg);
+  }
+  .sticker:nth-child(2n) { transform: rotate(1.5deg); }
+  .sticker:nth-child(3n) { transform: rotate(-2deg); }
+  @keyframes pop {
+    0% { transform: scale(0) rotate(-10deg); opacity: 0; }
+    70% { transform: scale(1.1) rotate(3deg); }
+    100% { transform: scale(1) rotate(-1deg); opacity: 1; }
+  }
+
+  /* ===== DRAG & DROP ===== */
+  .dnd-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 24px;
+    margin: 20px 0;
+  }
+  .dnd-col h4 {
+    margin-bottom: 12px;
+    color: var(--c1-dark);
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 1.1rem;
+  }
+  .dnd-items, .dnd-zones { display: flex; flex-direction: column; gap: 10px; }
+  .dnd-item {
+    background: linear-gradient(135deg, var(--c2), #ffd88a);
+    color: var(--c3);
+    padding: 14px 20px;
+    border-radius: 14px;
+    cursor: grab;
+    font-weight: 800;
+    font-family: 'Baloo 2', sans-serif;
+    box-shadow: 0 5px 0 var(--c2-dark), 0 8px 16px rgba(255,184,79,.25);
+    user-select: none;
+    transition: all .2s;
+    text-align: center;
+    font-size: 1.05rem;
+  }
+  .dnd-item:hover { transform: translateY(-2px); }
+  .dnd-item:active { cursor: grabbing; transform: translateY(2px); box-shadow: 0 2px 0 var(--c2-dark); }
+  .dnd-item.dragging { opacity: .4; }
+  .dnd-zone {
+    background: #f9faff;
+    padding: 16px 18px;
+    border-radius: 14px;
+    border: 3px dashed #cfd6ff;
+    min-height: 56px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.02rem;
+    font-weight: 600;
+    transition: all .25s;
+  }
+  .dnd-zone.over {
+    border-color: var(--c1);
+    background: #eef2ff;
+    transform: scale(1.02);
+  }
+  .dnd-zone.correct {
+    border-color: transparent;
+    border-style: solid;
+    background: linear-gradient(135deg, #e8f8ec, #d4f4de);
+    box-shadow: 0 4px 12px rgba(109,223,168,.3);
+  }
+  .dnd-zone.wrong {
+    border-color: transparent;
+    border-style: solid;
+    background: linear-gradient(135deg, #ffe8e8, #ffdada);
+  }
+  .dnd-zone .slot {
+    font-weight: 800;
+    color: var(--c1-dark);
+    min-width: 60px;
+    display: inline-block;
+    border-bottom: 2px solid #cfd6ff;
+    text-align: center;
+  }
+
+  /* ===== EMOJI SCALE ===== */
+  .emoji-scale {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin: 24px 0;
+    flex-wrap: wrap;
+  }
+  .emoji-scale button {
+    font-size: 2.4rem;
+    background: linear-gradient(145deg, #f9faff, #eef2ff);
+    border: 3px solid transparent;
+    border-radius: 50%;
+    width: 76px; height: 76px;
+    cursor: pointer;
+    transition: all .25s cubic-bezier(.4, 0, .2, 1);
+    box-shadow: var(--shadow-sm);
+  }
+  .emoji-scale button:hover {
+    transform: scale(1.15) rotate(-8deg);
+    box-shadow: var(--shadow-md);
+  }
+  .emoji-scale button.selected {
+    border-color: var(--c1);
+    background: linear-gradient(135deg, #e4eaff, #d4dcff);
+    transform: scale(1.15);
+    box-shadow: 0 10px 24px rgba(106,141,255,.35);
+  }
+
+  /* ===== RESULT ===== */
+  .result-box {
+    background: linear-gradient(135deg, var(--c1), var(--c-purple), var(--c-pink));
+    background-size: 200% 200%;
+    color: white;
+    padding: 32px;
+    border-radius: 24px;
+    text-align: center;
+    margin-top: 20px;
+    box-shadow: var(--shadow-lg);
+    animation: gradientMove 6s ease infinite;
+  }
+  @keyframes gradientMove {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  .result-box .big {
+    font-size: 2.8rem;
+    font-weight: 900;
+    font-family: 'Baloo 2', sans-serif;
+    margin: 6px 0;
+    text-shadow: 0 4px 12px rgba(0,0,0,.15);
+  }
+  .result-box .level {
+    font-size: 1.15rem;
+    margin-top: 8px;
+    font-weight: 700;
+  }
+
+  /* ===== REVEAL ===== */
+  .reveal-btn {
+    background: linear-gradient(135deg, var(--c2), #ffd88a);
+    color: var(--c3);
+    border: none;
+    border-radius: 14px;
+    padding: 12px 24px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 12px;
+    box-shadow: 0 6px 16px rgba(255,184,79,.3);
+    transition: all .2s;
+  }
+  .reveal-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(255,184,79,.4);
+  }
+
+  /* ===== NAV BUTTONS ===== */
+  .nav-btns {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 32px;
+    gap: 14px;
+  }
+  .nav-btns button {
+    flex: 1;
+    padding: 16px;
+    border: none;
+    border-radius: 16px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all .25s cubic-bezier(.4, 0, .2, 1);
+  }
+  .prev {
+    background: #eef2ff;
+    color: var(--c1-dark);
+  }
+  .prev:hover:not(:disabled) {
+    background: #dfe5ff;
+    transform: translateX(-3px);
+  }
+  .next {
+    background: linear-gradient(135deg, var(--c1), var(--c-purple));
+    color: white;
+    box-shadow: 0 8px 20px rgba(106,141,255,.35);
+  }
+  .next:hover {
+    transform: translateX(3px);
+    box-shadow: 0 12px 28px rgba(106,141,255,.45);
+  }
+  .nav-btns button:disabled {
+    opacity: .4;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  /* ===== CONFETTI ===== */
+  .confetti {
+    position: fixed;
+    width: 10px;
+    height: 14px;
+    top: -20px;
+    z-index: 999;
+    pointer-events: none;
+    animation: fall 3s linear forwards;
+  }
+  @keyframes fall {
+    0% { transform: translateY(0) rotate(0); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+  }
+
+  @media (max-width: 640px) {
+    section { padding: 28px 20px; border-radius: 22px; }
+    h1 { font-size: 1.5rem; }
+    h1 .en { padding-left: 0; }
+    .dnd-wrap { grid-template-columns: 1fr; }
+    .emoji-scale button { width: 60px; height: 60px; font-size: 1.9rem; }
+    main { padding: 20px 14px 80px; }
+    .sticker-input { flex-direction: column; }
+    .sticker-input button { padding: 14px; }
+  }
+</style>
 </head>
 <body>
 
-  <header>
-    <h1>🐱 Урок: Знакомство с котами</h1>
-    <p>Интерактивный урок · 5 минут</p>
-  </header>
+<nav id="nav"></nav>
 
-  <div class="container">
+<div class="progress-wrap">
+  <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+  <div class="progress-label" id="progressLabel">0 / 7</div>
+</div>
 
-    <section>
-      <h2>1. Кто такие коты?</h2>
-      <p>
-        <b>Кот</b> — домашнее животное семейства кошачьих. Живёт рядом с человеком
-        уже более <mark>9 000 лет</mark>.
-      </p>
-      <img src="https://placekitten.com/700/300" alt="Котёнок">
-      <blockquote>
-        «Кот — это существо, которое думает, что оно вас приручило». — народная мудрость
-      </blockquote>
-    </section>
+<main>
 
-    <section>
-      <h2>2. Интересные факты</h2>
-      <ul>
-        <li>Коты мурлычут на частоте 25–150 Гц</li>
-        <li>У них <b>32 мышцы</b> в каждом ухе</li>
-        <li>Спят они до 16 часов в сутки 😴</li>
-        <li>Нос кота уникален, как отпечаток пальца человека</li>
-      </ul>
-    </section>
+<!-- ЭТАП 1 -->
+<section id="s1" class="active">
+  <h1><span class="stage-num">1</span> Ice-breaking / Warm-up
+    <span class="en">Знакомство и разогрев</span>
+  </h1>
+  <p>👋 Hello! Let's get to know each other!</p>
+  <p class="ru">Поздоровайся и напиши своё имя и сколько тебе лет.</p>
 
-    <section>
-      <h2>3. Как заботиться о коте</h2>
-      <ol>
-        <li>Кормить 2–3 раза в день</li>
-        <li>Менять воду каждый день</li>
-        <li>Чистить лоток</li>
-        <li>Играть минимум 15 минут в день</li>
-        <li>Раз в год — визит к ветеринару</li>
-      </ol>
-    </section>
-
-    <section class="quiz">
-      <h2>🧠 Проверь себя</h2>
-      <p>Сколько часов в сутки коты обычно спят?</p>
-      <button onclick="check(8)">8 часов</button>
-      <button onclick="check(16)">16 часов</button>
-      <button onclick="check(24)">24 часа</button>
-      <div id="quizResult"></div>
-    </section>
-
+  <h2>💬 Answer the questions</h2>
+  <div class="cards">
+    <div class="card"><span class="emoji">👤</span><div class="word">What's your name?</div><div class="trans">Как тебя зовут?</div></div>
+    <div class="card"><span class="emoji">🎂</span><div class="word">How old are you?</div><div class="trans">Сколько тебе лет?</div></div>
+    <div class="card"><span class="emoji">🏠</span><div class="word">Where are you from?</div><div class="trans">Откуда ты?</div></div>
   </div>
 
-  <script>
-    function check(n) {
-      const res = document.getElementById('quizResult');
-      if (n === 16) {
-        res.textContent = '✅ Верно! Коты спят до 16 часов в сутки.';
-        res.className = 'correct';
+  <h2>📌 Write your name on a sticker</h2>
+  <p class="ru">Напиши своё имя — оно появится как стикер.</p>
+  <div class="sticker-input">
+    <input type="text" id="nameInput" placeholder="Your name / Твоё имя" maxlength="20" onkeydown="if(event.key==='Enter')addSticker()">
+    <button onclick="addSticker()">Добавить</button>
+  </div>
+  <div class="stickers" id="stickers"></div>
+
+  <div class="nav-btns">
+    <button class="prev" disabled>← Back</button>
+    <button class="next" onclick="go(2)">Next →</button>
+  </div>
+</section>
+
+<!-- ЭТАП 2 -->
+<section id="s2">
+  <h1><span class="stage-num">2</span> Placement Test
+    <span class="en">Диагностика уровня</span>
+  </h1>
+  <p>🧪 Let's check your level! 8 questions.</p>
+  <p class="ru">Ответь на 8 вопросов — в конце узнаешь свой уровень.</p>
+
+  <div id="quiz"></div>
+
+  <button class="reveal-btn" onclick="showResult()">🎯 Показать результат</button>
+
+  <div class="result-box" id="resultBox" style="display:none">
+    <div>Your score:</div>
+    <div class="big" id="scoreBig">0 / 8</div>
+    <div class="level" id="levelText"></div>
+  </div>
+
+  <div class="nav-btns">
+    <button class="prev" onclick="go(1)">← Back</button>
+    <button class="next" onclick="go(3)">Next →</button>
+  </div>
+</section>
+
+<!-- ЭТАП 3 -->
+<section id="s3">
+  <h1><span class="stage-num">3</span> Today's Goal
+    <span class="en">Постановка цели</span>
+  </h1>
+  <p>🎯 Today we will learn:</p>
+  <div class="cards">
+    <div class="card"><span class="emoji">👨‍👩‍👧</span><div class="word">Family words</div><div class="trans">Слова о семье</div></div>
+    <div class="card"><span class="emoji">📘</span><div class="word">Present Simple</div><div class="trans">Простое настоящее</div></div>
+    <div class="card"><span class="emoji">🗣️</span><div class="word">Talk about family</div><div class="trans">Рассказ о семье</div></div>
+  </div>
+
+  <h2>📝 By the end of the lesson I can:</h2>
+  <ul style="margin-left:24px; font-size:1.05rem;">
+    <li>Name 8 family members in English</li>
+    <li>Use <b>am / is / are</b> correctly</li>
+    <li>Make 3 sentences about my family</li>
+  </ul>
+
+  <div class="nav-btns">
+    <button class="prev" onclick="go(2)">← Back</button>
+    <button class="next" onclick="go(4)">Next →</button>
+  </div>
+</section>
+
+<!-- ЭТАП 4 -->
+<section id="s4">
+  <h1><span class="stage-num">4</span> Main Material
+    <span class="en">Основной материал</span>
+  </h1>
+
+  <h2>📚 Part 1. Family vocabulary</h2>
+  <div class="cards">
+    <div class="card"><span class="emoji">👩</span><div class="word">mother</div><div class="trans">мама</div></div>
+    <div class="card"><span class="emoji">👨</span><div class="word">father</div><div class="trans">папа</div></div>
+    <div class="card"><span class="emoji">👧</span><div class="word">sister</div><div class="trans">сестра</div></div>
+    <div class="card"><span class="emoji">👦</span><div class="word">brother</div><div class="trans">брат</div></div>
+    <div class="card"><span class="emoji">👵</span><div class="word">grandmother</div><div class="trans">бабушка</div></div>
+    <div class="card"><span class="emoji">👴</span><div class="word">grandfather</div><div class="trans">дедушка</div></div>
+    <div class="card"><span class="emoji">🐶</span><div class="word">dog</div><div class="trans">собака</div></div>
+    <div class="card"><span class="emoji">🐱</span><div class="word">cat</div><div class="trans">кошка</div></div>
+  </div>
+
+  <h2>📘 Part 2. Present Simple + to be</h2>
+  <table>
+    <tr><th>Pronoun</th><th>to be</th><th>Example</th></tr>
+    <tr><td>I</td><td><b>am</b></td><td>I <b>am</b> a pupil.</td></tr>
+    <tr><td>You</td><td><b>are</b></td><td>You <b>are</b> my friend.</td></tr>
+    <tr><td>He / She / It</td><td><b>is</b></td><td>She <b>is</b> my sister.</td></tr>
+    <tr><td>We / They</td><td><b>are</b></td><td>They <b>are</b> my parents.</td></tr>
+  </table>
+
+  <h2>➕ Present Simple: he / she / it + s</h2>
+  <table>
+    <tr><th>I / You / We / They</th><th>He / She / It</th></tr>
+    <tr><td>I <b>play</b></td><td>She <b>plays</b></td></tr>
+    <tr><td>We <b>like</b></td><td>He <b>likes</b></td></tr>
+    <tr><td>They <b>read</b></td><td>My mother <b>reads</b></td></tr>
+  </table>
+
+  <p class="ru">💡 Не забудь: если говорим про he / she / it — добавляем -s к глаголу.</p>
+
+  <div class="nav-btns">
+    <button class="prev" onclick="go(3)">← Back</button>
+    <button class="next" onclick="go(5)">Next →</button>
+  </div>
+</section>
+
+<!-- ЭТАП 5 -->
+<section id="s5">
+  <h1><span class="stage-num">5</span> Practice
+    <span class="en">Практика</span>
+  </h1>
+  <p>🎮 Let's practice! Drag the words to the right places.</p>
+  <p class="ru">Перетащи слова к правильным пропускам.</p>
+
+  <div class="dnd-wrap">
+    <div class="dnd-col">
+      <h4>Words:</h4>
+      <div class="dnd-items" id="dndItems">
+        <div class="dnd-item" draggable="true" data-word="am">am</div>
+        <div class="dnd-item" draggable="true" data-word="is">is</div>
+        <div class="dnd-item" draggable="true" data-word="are">are</div>
+        <div class="dnd-item" draggable="true" data-word="plays">plays</div>
+        <div class="dnd-item" draggable="true" data-word="like">like</div>
+      </div>
+    </div>
+    <div class="dnd-col">
+      <h4>Sentences:</h4>
+      <div class="dnd-zones" id="dndZones">
+        <div class="dnd-zone" data-answer="am">I <span class="slot">___</span> a pupil.</div>
+        <div class="dnd-zone" data-answer="is">She <span class="slot">___</span> my sister.</div>
+        <div class="dnd-zone" data-answer="are">They <span class="slot">___</span> my parents.</div>
+        <div class="dnd-zone" data-answer="plays">My brother <span class="slot">___</span> football.</div>
+        <div class="dnd-zone" data-answer="like">We <span class="slot">___</span> our family.</div>
+      </div>
+      <button class="reveal-btn" onclick="checkDnd()" style="margin-top:14px; width:100%">✅ Проверить</button>
+    </div>
+  </div>
+
+  <div class="nav-btns">
+    <button class="prev" onclick="go(4)">← Back</button>
+    <button class="next" onclick="go(6)">Next →</button>
+  </div>
+</section>
+
+<!-- ЭТАП 6 -->
+<section id="s6">
+  <h1><span class="stage-num">6</span> Reflection
+    <span class="en">Рефлексия</span>
+  </h1>
+  <p>💭 How do you feel after the lesson?</p>
+  <p class="ru">Как ты себя чувствуешь после урока?</p>
+
+  <div class="emoji-scale" id="emojiScale">
+    <button data-mood="😢">😢</button>
+    <button data-mood="😐">😐</button>
+    <button data-mood="🙂">🙂</button>
+    <button data-mood="😄">😄</button>
+    <button data-mood="🤩">🤩</button>
+  </div>
+  <p id="moodResult" style="text-align:center; font-size:1.15rem; min-height:30px; font-weight:700; color:var(--c1-dark);"></p>
+
+  <h2>🎫 Exit ticket</h2>
+  <p class="ru">Закончи фразу:</p>
+  <div class="sticker-input">
+    <input type="text" id="exitInput" placeholder="Today I learned... / Сегодня я узнал(а)..." maxlength="120" onkeydown="if(event.key==='Enter')addExit()">
+    <button onclick="addExit()">Send</button>
+  </div>
+  <div class="stickers" id="exitStickers"></div>
+
+  <div class="nav-btns">
+    <button class="prev" onclick="go(5)">← Back</button>
+    <button class="next" onclick="go(7)">Next →</button>
+  </div>
+</section>
+
+<!-- ЭТАП 7 -->
+<section id="s7">
+  <h1><span class="stage-num">7</span> Homework
+    <span class="en">Домашнее задание</span>
+  </h1>
+  <p>🏠 Well done! Here is your homework:</p>
+
+  <div class="cards">
+    <div class="card"><span class="emoji">✍️</span><div class="word">Write 5 sentences</div><div class="trans">5 предложений о семье</div></div>
+    <div class="card"><span class="emoji">🎨</span><div class="word">Draw a family tree</div><div class="trans">Нарисуй семейное дерево</div></div>
+    <div class="card"><span class="emoji">📸</span><div class="word">Take a photo</div><div class="trans">Сфотографируй и пришли</div></div>
+  </div>
+
+  <h2>Useful phrases:</h2>
+  <ul style="margin-left:24px; font-size:1.05rem;">
+    <li>I have got a mother. Her name is ...</li>
+    <li>My father is ... years old.</li>
+    <li>We like to ... together.</li>
+  </ul>
+
+  <div class="result-box">
+    <div>🎉 Great job!</div>
+    <div class="big">See you next lesson!</div>
+  </div>
+
+  <div class="nav-btns">
+    <button class="prev" onclick="go(6)">← Back</button>
+    <button class="next" onclick="go(1)">Restart ↺</button>
+  </div>
+</section>
+
+</main>
+
+<script>
+/* ===== NAV ===== */
+const stages = ["1. Warm-up","2. Test","3. Goal","4. Material","5. Practice","6. Reflection","7. Homework"];
+const nav = document.getElementById('nav');
+stages.forEach((name, i) => {
+  const b = document.createElement('button');
+  b.textContent = name;
+  b.onclick = () => go(i + 1);
+  nav.appendChild(b);
+});
+
+function go(n) {
+  document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+  document.getElementById('s' + n).classList.add('active');
+  document.querySelectorAll('nav button').forEach((b, i) => b.classList.toggle('active', i === n - 1));
+  document.getElementById('progressFill').style.width = (n / 7 * 100) + '%';
+  document.getElementById('progressLabel').textContent = n + ' / 7';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+go(1);
+
+/* ===== CONFETTI ===== */
+function fireConfetti() {
+  const colors = ['#6a8dff','#ffb84f','#ff8ec7','#6ddfa8','#a78bfa'];
+  for (let i = 0; i < 40; i++) {
+    const c = document.createElement('div');
+    c.className = 'confetti';
+    c.style.left = Math.random() * 100 + 'vw';
+    c.style.background = colors[Math.floor(Math.random() * colors.length)];
+    c.style.animationDelay = Math.random() * 0.5 + 's';
+    c.style.animationDuration = (2 + Math.random()) + 's';
+    c.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+    document.body.appendChild(c);
+    setTimeout(() => c.remove(), 3500);
+  }
+}
+
+/* ===== WARM-UP ===== */
+function addSticker() {
+  const input = document.getElementById('nameInput');
+  const val = input.value.trim();
+  if (!val) return;
+  const el = document.createElement('div');
+  el.className = 'sticker';
+  el.textContent = 'Hi, ' + val + '!';
+  document.getElementById('stickers').appendChild(el);
+  input.value = '';
+  fireConfetti();
+}
+
+/* ===== QUIZ ===== */
+const questions = [
+  { q: "1. Choose the correct word: This is my ___. She is 8.", options: ["brother", "sister", "father"], correct: 1 },
+  { q: "2. I ___ a pupil.", options: ["am", "is", "are"], correct: 0 },
+  { q: "3. She ___ my mother.", options: ["am", "is", "are"], correct: 1 },
+  { q: "4. They ___ my grandparents.", options: ["am", "is", "are"], correct: 2 },
+  { q: "5. My father ___ TV every evening.", options: ["watch", "watches"], correct: 1 },
+  { q: "6. We ___ our family.", options: ["love", "loves"], correct: 0 },
+  { q: "7. Read: Tom has got a big family. He has got a mother, a father and two sisters. Question: How many sisters has Tom got?", options: ["one", "two", "three"], correct: 1 },
+  { q: "8. What does 'grandmother' mean?", options: ["мама", "бабушка", "сестра"], correct: 1 }
+];
+
+let score = 0;
+const answered = new Set();
+const quizBox = document.getElementById('quiz');
+
+questions.forEach((item, i) => {
+  const div = document.createElement('div');
+  div.className = 'quiz-item';
+  div.innerHTML = `<div class="q">${item.q}</div>`;
+  item.options.forEach((opt, j) => {
+    const btn = document.createElement('button');
+    btn.textContent = opt;
+    btn.onclick = () => {
+      if (answered.has(i)) return;
+      answered.add(i);
+      const fb = div.querySelector('.feedback');
+      if (j === item.correct) {
+        btn.classList.add('correct');
+        fb.textContent = '✅ Correct!';
+        fb.style.color = '#4caf50';
+        score++;
+        fireConfetti();
       } else {
-        res.textContent = '❌ Не совсем. Попробуй ещё раз!';
-        res.className = 'wrong';
+        btn.classList.add('wrong');
+        div.querySelectorAll('button')[item.correct].classList.add('correct');
+        fb.textContent = '❌ Правильный ответ выделен зелёным.';
+        fb.style.color = '#e74c3c';
+      }
+    };
+    div.appendChild(btn);
+  });
+  const fb = document.createElement('div');
+  fb.className = 'feedback';
+  div.appendChild(fb);
+  quizBox.appendChild(div);
+});
+
+function showResult() {
+  const box = document.getElementById('resultBox');
+  box.style.display = 'block';
+  document.getElementById('scoreBig').textContent = score + ' / 8';
+  let level = '';
+  if (score <= 3) level = 'A1 — начнём с базового курса';
+  else if (score <= 6) level = 'A1+ / A2 — адаптируем материал';
+  else level = 'A2+ — можно переходить в следующую группу';
+  document.getElementById('levelText').textContent = level;
+  box.scrollIntoView({ behavior: 'smooth' });
+  fireConfetti();
+}
+
+/* ===== DRAG & DROP ===== */
+let dragged = null;
+document.querySelectorAll('.dnd-item').forEach(item => {
+  item.addEventListener('dragstart', e => {
+    dragged = item;
+    item.classList.add('dragging');
+  });
+  item.addEventListener('dragend', () => item.classList.remove('dragging'));
+});
+
+document.querySelectorAll('.dnd-zone').forEach(zone => {
+  zone.addEventListener('dragover', e => {
+    e.preventDefault();
+    zone.classList.add('over');
+  });
+  zone.addEventListener('dragleave', () => zone.classList.remove('over'));
+  zone.addEventListener('drop', e => {
+    e.preventDefault();
+    zone.classList.remove('over');
+    if (!dragged) return;
+    const slot = zone.querySelector('.slot');
+    slot.textContent = dragged.dataset.word;
+    slot.style.color = '#4a6ee0';
+    slot.style.borderBottomColor = '#4a6ee0';
+    zone.dataset.placed = dragged.dataset.word;
+    dragged.remove();
+    dragged = null;
+  });
+});
+
+function checkDnd() {
+  let allCorrect = true;
+  document.querySelectorAll('.dnd-zone').forEach(z => {
+    if (z.dataset.placed === z.dataset.answer) {
+      z.classList.add('correct');
+      z.classList.remove('wrong');
+    } else {
+      allCorrect = false;
+      if (z.dataset.placed) {
+        z.classList.add('wrong');
+        z.classList.remove('correct');
       }
     }
-  </script>
+  });
+  if (allCorrect) fireConfetti();
+}
+
+/* ===== REFLECTION ===== */
+document.querySelectorAll('#emojiScale button').forEach(b => {
+  b.onclick = () => {
+    document.querySelectorAll('#emojiScale button').forEach(x => x.classList.remove('selected'));
+    b.classList.add('selected');
+    document.getElementById('moodResult').textContent = 'Ты выбрал: ' + b.dataset.mood + ' Спасибо за ответ!';
+  };
+});
+
+function addExit() {
+  const input = document.getElementById('exitInput');
+  const val = input.value.trim();
+  if (!val) return;
+  const el = document.createElement('div');
+  el.className = 'sticker';
+  el.style.background = 'linear-gradient(135deg, #6ddfa8, #a8f0c8)';
+  el.style.boxShadow = '0 6px 0 #4dc98a, 0 8px 16px rgba(109,223,168,.3)';
+  el.textContent = val;
+  document.getElementById('exitStickers').appendChild(el);
+  input.value = '';
+  fireConfetti();
+}
+</script>
 
 </body>
 </html>
