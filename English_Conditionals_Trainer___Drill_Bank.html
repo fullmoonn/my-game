@@ -1,0 +1,1532 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Conditionals: The Reality Scale Trainer & 100-Drill Bank</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        zero: '#64748b',
+                        first: '#2563eb',
+                        second: '#7c3aed',
+                        third: '#d97706',
+                        mixed: '#0d9488',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
+
+        .font-mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .scale-node {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .scale-node.active {
+            transform: scale(1.15);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
+        }
+
+        .btn-option {
+            transition: all 0.2s ease;
+        }
+
+        .btn-option:hover:not(:disabled) {
+            transform: translateY(-2px);
+            border-color: #38bdf8;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.35s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .q-grid-btn {
+            transition: all 0.15s ease;
+        }
+        .q-grid-btn:hover {
+            transform: scale(1.08);
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1e293b;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #475569;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #64748b;
+        }
+    </style>
+</head>
+<body class="min-h-screen pb-16 antialiased selection:bg-indigo-500 selection:text-white">
+
+    <!-- Top Navigation / Header -->
+    <header class="border-b border-slate-800 bg-slate-900/90 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div class="flex items-center space-x-3">
+                <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-500 to-teal-400 flex items-center justify-center font-black text-xl shadow-lg text-slate-950">
+                    ∞
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold tracking-tight text-white flex items-center gap-2">
+                        Conditionals Cognitive Trainer
+                    </h1>
+                    <p class="text-xs text-slate-400">Master the logic of verbal distance from reality</p>
+                </div>
+            </div>
+
+            <!-- Main Mode Switcher Tabs -->
+            <div class="flex items-center bg-slate-950 p-1 rounded-xl border border-slate-800 shadow-inner">
+                <button id="main-tab-guided" onclick="switchMainTab('guided')" class="px-4 py-1.5 rounded-lg text-xs font-bold transition bg-indigo-600 text-white shadow">
+                    🎯 Guided Trainer
+                </button>
+                <button id="main-tab-bank" onclick="switchMainTab('bank')" class="px-4 py-1.5 rounded-lg text-xs font-bold transition text-slate-400 hover:text-white flex items-center gap-1.5">
+                    ⚡ 100-Drill Bank
+                    <span class="px-1.5 py-0.5 rounded-full text-[10px] bg-teal-500/20 text-teal-300 border border-teal-500/30 font-mono">100</span>
+                </button>
+            </div>
+
+            <button id="reset-app-btn" onclick="resetTrainer()" class="px-3.5 py-1.5 rounded-lg border border-slate-700 bg-slate-800/80 hover:bg-slate-700 text-xs font-semibold text-slate-300 hover:text-white transition flex items-center gap-2">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                Reset
+            </button>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 py-8 space-y-12">
+
+        <!-- TAB 1: GUIDED TRAINER CONTENT -->
+        <div id="view-guided-trainer" class="space-y-12 fade-in">
+
+            <!-- Core Anchor Concept Cards -->
+            <section aria-label="Core Rules" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="p-5 rounded-2xl bg-slate-900/90 border border-indigo-500/30 relative overflow-hidden shadow-lg">
+                    <div class="absolute -right-6 -bottom-6 w-24 h-24 bg-indigo-500/10 rounded-full blur-2xl"></div>
+                    <div class="flex items-start gap-3">
+                        <span class="p-2 rounded-lg bg-indigo-500/20 text-indigo-400 font-bold text-lg">💡</span>
+                        <div>
+                            <h2 class="text-sm font-bold tracking-wide uppercase text-indigo-400 mb-1">Anchor Rule #1: Distance Scale</h2>
+                            <p class="text-sm text-slate-200 leading-relaxed">
+                                <strong class="text-white bg-indigo-950/80 px-1 py-0.5 rounded border border-indigo-700/50">The past verb form does NOT mean past time.</strong> It signifies <em class="text-indigo-300 not-italic font-semibold">distance from reality</em>. The further a scenario is from reality, the more "past" the verb appears!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-5 rounded-2xl bg-slate-900/90 border border-teal-500/30 relative overflow-hidden shadow-lg">
+                    <div class="absolute -right-6 -bottom-6 w-24 h-24 bg-teal-500/10 rounded-full blur-2xl"></div>
+                    <div class="flex items-start gap-3">
+                        <span class="p-2 rounded-lg bg-teal-500/20 text-teal-400 font-bold text-lg">🚫</span>
+                        <div>
+                            <h2 class="text-sm font-bold tracking-wide uppercase text-teal-400 mb-1">Anchor Rule #2: Modal Isolation</h2>
+                            <p class="text-sm text-slate-200 leading-relaxed">
+                                <strong class="text-white bg-teal-950/80 px-1 py-0.5 rounded border border-teal-700/50">The IF-clause NEVER takes "will" or "would".</strong> Modals reflect attitude and belong strictly in the main outcome clause.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 1: INTERACTIVE REALITY SCALE -->
+            <section aria-labelledby="scale-heading" class="bg-slate-900 rounded-2xl border border-slate-800 p-6 shadow-xl">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-6">
+                    <div>
+                        <h2 id="scale-heading" class="text-xl font-extrabold text-white flex items-center gap-2">
+                            <span>1. The Interactive Reality Scale</span>
+                        </h2>
+                        <p class="text-xs text-slate-400">Click any dot on the axis to inspect how verb forms shift with distance from reality</p>
+                    </div>
+                    <span class="text-xs font-mono bg-slate-800 text-slate-300 px-3 py-1 rounded-full border border-slate-700 w-fit">
+                        100% Reality ───► 0% Reality
+                    </span>
+                </div>
+
+                <!-- Scale Line UI -->
+                <div class="relative my-8 px-4">
+                    <div class="absolute top-1/2 left-4 right-4 h-1.5 bg-slate-800 -translate-y-1/2 rounded-full"></div>
+                    <div class="absolute top-1/2 left-4 right-4 h-1.5 bg-gradient-to-r from-slate-500 via-blue-500 via-violet-500 via-amber-500 to-teal-500 -translate-y-1/2 rounded-full opacity-80"></div>
+
+                    <!-- 5 Clickable Scale Nodes -->
+                    <div class="relative flex justify-between items-center max-w-4xl mx-auto">
+                        <button onclick="selectScaleNode(0)" id="node-0" class="scale-node active group flex flex-col items-center focus:outline-none">
+                            <div class="w-8 h-8 rounded-full bg-slate-600 border-4 border-slate-900 group-hover:ring-4 ring-slate-500/40 flex items-center justify-center font-mono text-xs font-bold text-white shadow-md">0</div>
+                            <span class="mt-2 text-xs font-semibold text-slate-300 group-hover:text-white">Zero</span>
+                            <span class="text-[10px] text-slate-500 hidden sm:inline">100% Fact</span>
+                        </button>
+
+                        <button onclick="selectScaleNode(1)" id="node-1" class="scale-node group flex flex-col items-center focus:outline-none">
+                            <div class="w-8 h-8 rounded-full bg-blue-600 border-4 border-slate-900 group-hover:ring-4 ring-blue-500/40 flex items-center justify-center font-mono text-xs font-bold text-white shadow-md">1</div>
+                            <span class="mt-2 text-xs font-semibold text-slate-300 group-hover:text-white">First</span>
+                            <span class="text-[10px] text-slate-500 hidden sm:inline">Real Future</span>
+                        </button>
+
+                        <button onclick="selectScaleNode(2)" id="node-2" class="scale-node group flex flex-col items-center focus:outline-none">
+                            <div class="w-8 h-8 rounded-full bg-violet-600 border-4 border-slate-900 group-hover:ring-4 ring-violet-500/40 flex items-center justify-center font-mono text-xs font-bold text-white shadow-md">2</div>
+                            <span class="mt-2 text-xs font-semibold text-slate-300 group-hover:text-white">Second</span>
+                            <span class="text-[10px] text-slate-500 hidden sm:inline">Unreal Now</span>
+                        </button>
+
+                        <button onclick="selectScaleNode(3)" id="node-3" class="scale-node group flex flex-col items-center focus:outline-none">
+                            <div class="w-8 h-8 rounded-full bg-amber-600 border-4 border-slate-900 group-hover:ring-4 ring-amber-500/40 flex items-center justify-center font-mono text-xs font-bold text-white shadow-md">3</div>
+                            <span class="mt-2 text-xs font-semibold text-slate-300 group-hover:text-white">Third</span>
+                            <span class="text-[10px] text-slate-500 hidden sm:inline">Unreal Past</span>
+                        </button>
+
+                        <button onclick="selectScaleNode(4)" id="node-4" class="scale-node group flex flex-col items-center focus:outline-none">
+                            <div class="w-8 h-8 rounded-full bg-teal-600 border-4 border-slate-900 group-hover:ring-4 ring-teal-500/40 flex items-center justify-center font-mono text-xs font-bold text-white shadow-md">M</div>
+                            <span class="mt-2 text-xs font-semibold text-slate-300 group-hover:text-white">Mixed</span>
+                            <span class="text-[10px] text-slate-500 hidden sm:inline">Time-Cross</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Dynamic Info Display Box -->
+                <div id="scale-card" class="mt-6 p-6 rounded-xl border border-slate-800 bg-slate-950/80 transition-all duration-300">
+                    <!-- Content injected via JS -->
+                </div>
+            </section>
+
+            <!-- SECTION 2: SEQUENTIAL PRACTICE LEVELS -->
+            <section aria-labelledby="practice-heading" class="bg-slate-900 rounded-2xl border border-slate-800 p-6 shadow-xl">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-800">
+                    <div>
+                        <h2 id="practice-heading" class="text-xl font-extrabold text-white flex items-center gap-2">
+                            <span>2. Cognitive Trainer Levels</span>
+                        </h2>
+                        <p class="text-xs text-slate-400">Step-by-step practice. One item at a time with instant cognitive feedback.</p>
+                    </div>
+
+                    <!-- Level selector tabs -->
+                    <div class="flex items-center gap-1 bg-slate-950 p-1 rounded-xl border border-slate-800 overflow-x-auto">
+                        <button onclick="switchLevel(1)" id="lvl-tab-1" class="px-3 py-1.5 rounded-lg text-xs font-semibold transition bg-indigo-600 text-white shadow">
+                            L1: Recognition
+                        </button>
+                        <button onclick="switchLevel(2)" id="lvl-tab-2" class="px-3 py-1.5 rounded-lg text-xs font-semibold transition text-slate-400 hover:text-white">
+                            L2: Discrimination
+                        </button>
+                        <button onclick="switchLevel(3)" id="lvl-tab-3" class="px-3 py-1.5 rounded-lg text-xs font-semibold transition text-slate-400 hover:text-white">
+                            L3: Production
+                        </button>
+                        <button onclick="switchLevel(4)" id="lvl-tab-4" class="px-3 py-1.5 rounded-lg text-xs font-semibold transition text-slate-400 hover:text-white">
+                            L4: Scenarios
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Level Active Card View -->
+                <div class="mt-6">
+                    <div class="flex items-center justify-between text-xs text-slate-400 mb-2">
+                        <span id="level-title-label" class="font-bold text-indigo-400 uppercase tracking-wider">Level 1: Type Recognition</span>
+                        <span id="level-progress-count">Item 1 of 4</span>
+                    </div>
+                    <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden mb-6">
+                        <div id="level-progress-bar" class="h-full bg-gradient-to-r from-indigo-500 to-teal-400 transition-all duration-300 w-1/4"></div>
+                    </div>
+
+                    <div id="practice-card-content" class="space-y-6">
+                        <!-- Dynamic Question Content -->
+                    </div>
+
+                    <div id="feedback-panel" aria-live="polite" class="hidden mt-6 p-5 rounded-xl border transition-all duration-300 fade-in">
+                        <!-- Feedback injected dynamically -->
+                    </div>
+
+                    <div class="mt-6 flex justify-end">
+                        <button id="next-question-btn" onclick="nextQuestion()" class="hidden px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold shadow-lg transition flex items-center gap-2">
+                            Next Question
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 3: COMMON TRAPS & BRAIN PSYCHOLOGY -->
+            <section aria-labelledby="traps-heading" class="bg-slate-900 rounded-2xl border border-slate-800 p-6 shadow-xl">
+                <div class="mb-6">
+                    <h2 id="traps-heading" class="text-xl font-extrabold text-white flex items-center gap-2">
+                        <span>3. Common Brain Traps & Why They Happen</span>
+                    </h2>
+                    <p class="text-xs text-slate-400">Unlearn the subconscious cognitive traps that fool learner brains</p>
+                </div>
+
+                <div id="traps-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <!-- Injected via JavaScript -->
+                </div>
+            </section>
+
+            <!-- SECTION 4: FINAL MASTERY CHECK & DIAGNOSIS -->
+            <section id="mastery-section" aria-labelledby="mastery-heading" class="bg-slate-900 rounded-2xl border border-slate-800 p-6 shadow-xl">
+                <div class="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800 pb-4">
+                    <div>
+                        <h2 id="mastery-heading" class="text-xl font-extrabold text-white flex items-center gap-2">
+                            <span>4. Final Mastery Check & Diagnosis</span>
+                        </h2>
+                        <p class="text-xs text-slate-400">A mixed 10-item check to evaluate your mental model and identify exact error patterns</p>
+                    </div>
+                    <button id="start-mastery-btn" onclick="startMasteryCheck()" class="px-4 py-2 rounded-xl bg-teal-600 hover:bg-teal-500 text-white text-xs font-bold tracking-wide transition shadow-md">
+                        Start Mastery Test
+                    </button>
+                </div>
+
+                <div id="mastery-container">
+                    <div class="text-center py-8 text-slate-400">
+                        <p class="text-sm">Ready to test your intuition across all conditional types?</p>
+                        <p class="text-xs text-slate-500 mt-1">Click "Start Mastery Test" to begin the diagnostic evaluation.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- TAB 2: 100-DRILL PRACTICE BANK CONTENT -->
+        <div id="view-drill-bank" class="hidden space-y-8 fade-in">
+            
+            <!-- Bank Stats Bar -->
+            <section class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 flex flex-col justify-between">
+                    <span class="text-xs text-slate-400 font-medium">Solved Exercises</span>
+                    <div class="flex items-baseline gap-1 mt-1">
+                        <span id="bank-stat-solved" class="text-2xl font-black text-white font-mono">0</span>
+                        <span class="text-xs text-slate-500 font-mono">/ 100</span>
+                    </div>
+                </div>
+
+                <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 flex flex-col justify-between">
+                    <span class="text-xs text-slate-400 font-medium">Accuracy Rate</span>
+                    <div class="flex items-baseline gap-1 mt-1">
+                        <span id="bank-stat-accuracy" class="text-2xl font-black text-indigo-400 font-mono">0%</span>
+                    </div>
+                </div>
+
+                <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 flex flex-col justify-between">
+                    <span class="text-xs text-slate-400 font-medium">Current Streak</span>
+                    <div class="flex items-baseline gap-1 mt-1">
+                        <span id="bank-stat-streak" class="text-2xl font-black text-amber-400 font-mono">0</span>
+                        <span class="text-xs text-amber-500">🔥</span>
+                    </div>
+                </div>
+
+                <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 flex flex-col justify-between">
+                    <span class="text-xs text-slate-400 font-medium">Bank Completion</span>
+                    <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden mt-2">
+                        <div id="bank-stat-progress" class="bg-teal-500 h-full w-0 transition-all duration-300"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Filter & Navigation Toolbar -->
+            <section class="bg-slate-900 p-4 rounded-2xl border border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4">
+                <div class="flex items-center gap-1.5 overflow-x-auto w-full md:w-auto pb-1 md:pb-0">
+                    <span class="text-xs font-bold text-slate-400 mr-1 uppercase tracking-wider hidden sm:inline">Filter:</span>
+                    <button onclick="setBankFilter('all')" id="filter-btn-all" class="px-3 py-1.5 rounded-lg text-xs font-bold transition bg-indigo-600 text-white">All (100)</button>
+                    <button onclick="setBankFilter('zero')" id="filter-btn-zero" class="px-3 py-1.5 rounded-lg text-xs font-bold transition bg-slate-800 text-slate-300 hover:text-white">Zero (15)</button>
+                    <button onclick="setBankFilter('first')" id="filter-btn-first" class="px-3 py-1.5 rounded-lg text-xs font-bold transition bg-slate-800 text-slate-300 hover:text-white">First (25)</button>
+                    <button onclick="setBankFilter('second')" id="filter-btn-second" class="px-3 py-1.5 rounded-lg text-xs font-bold transition bg-slate-800 text-slate-300 hover:text-white">Second (25)</button>
+                    <button onclick="setBankFilter('third')" id="filter-btn-third" class="px-3 py-1.5 rounded-lg text-xs font-bold transition bg-slate-800 text-slate-300 hover:text-white">Third (20)</button>
+                    <button onclick="setBankFilter('mixed')" id="filter-btn-mixed" class="px-3 py-1.5 rounded-lg text-xs font-bold transition bg-slate-800 text-slate-300 hover:text-white">Mixed (15)</button>
+                </div>
+
+                <div class="flex items-center gap-2 w-full md:w-auto justify-end">
+                    <button onclick="jumpRandomBankQuestion()" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs font-semibold text-slate-200 transition flex items-center gap-1.5">
+                        🎲 Random
+                    </button>
+                    <button onclick="toggleBankGridDrawer()" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs font-semibold text-slate-200 transition flex items-center gap-1.5">
+                        🗺️ Grid View
+                    </button>
+                </div>
+            </section>
+
+            <!-- Question Matrix Grid Drawer (Expandable) -->
+            <div id="bank-grid-drawer" class="hidden bg-slate-900/90 p-5 rounded-2xl border border-slate-800 space-y-3 fade-in">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-xs font-bold text-slate-300 uppercase tracking-wider">100 Question Visual Map</h3>
+                    <div class="flex items-center gap-3 text-[11px] text-slate-400 font-mono">
+                        <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded bg-slate-800 border border-slate-700 inline-block"></span> Unattempted</span>
+                        <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded bg-emerald-500 inline-block"></span> Correct</span>
+                        <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded bg-rose-500 inline-block"></span> Incorrect</span>
+                    </div>
+                </div>
+                <div id="bank-grid-matrix" class="grid grid-cols-10 sm:grid-cols-20 gap-1.5 max-h-48 overflow-y-auto p-1">
+                    <!-- Dynamic Grid Buttons 1-100 -->
+                </div>
+            </div>
+
+            <!-- Active Question Workspace -->
+            <section class="bg-slate-900 rounded-2xl border border-slate-800 p-6 shadow-xl space-y-6">
+                <!-- Question Top Header -->
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-4">
+                    <div class="flex items-center gap-3">
+                        <span id="bank-q-number" class="text-xs font-mono font-bold bg-slate-800 text-indigo-300 px-3 py-1 rounded-lg border border-slate-700">
+                            Drill #1
+                        </span>
+                        <span id="bank-q-badge" class="text-xs font-mono font-bold px-2.5 py-0.5 rounded-full bg-slate-500/20 text-slate-300 border border-slate-500/30">
+                            Zero Conditional
+                        </span>
+                    </div>
+
+                    <div class="text-xs text-slate-400 font-mono">
+                        Filtered list: <span id="bank-filtered-pos">1 of 100</span>
+                    </div>
+                </div>
+
+                <!-- Sentence Prompt -->
+                <div class="bg-slate-950 p-6 rounded-xl border border-slate-800">
+                    <p id="bank-q-prompt" class="text-lg font-bold text-white leading-relaxed">
+                        Sentence prompt loads here...
+                    </p>
+                </div>
+
+                <!-- Options Grid -->
+                <div id="bank-q-options" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <!-- Options injected dynamically -->
+                </div>
+
+                <!-- Instant Micro-Lesson Feedback Area -->
+                <div id="bank-feedback" class="hidden p-5 rounded-xl border transition-all duration-300 fade-in">
+                    <!-- Feedback injected dynamically -->
+                </div>
+
+                <!-- Bottom Navigation Buttons -->
+                <div class="flex items-center justify-between pt-4 border-t border-slate-800">
+                    <button onclick="navBankQuestion(-1)" id="bank-prev-btn" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-300 transition flex items-center gap-1.5">
+                        ← Previous
+                    </button>
+
+                    <div class="flex items-center gap-2">
+                        <button onclick="skipBankQuestion()" class="px-4 py-2 rounded-xl border border-slate-700 text-xs font-semibold text-slate-400 hover:text-white transition">
+                            Skip
+                        </button>
+                        <button onclick="navBankQuestion(1)" id="bank-next-btn" class="px-5 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-xs font-bold text-white shadow-lg transition flex items-center gap-1.5">
+                            Next Drill →
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <footer class="max-w-6xl mx-auto px-4 text-center text-xs text-slate-500 py-6 border-t border-slate-800/80">
+        <p>Conditionals Cognitive Trainer & 100-Drill Bank • Based on the Distance-from-Reality Model</p>
+    </footer>
+
+    <script>
+        const SCALE_DATA = [
+            {
+                id: 0,
+                name: "Zero Conditional",
+                tag: "100% Reality / Universal Fact",
+                color: "slate",
+                borderClass: "border-slate-500",
+                bgBadge: "bg-slate-500/20 text-slate-300 border-slate-500/40",
+                formula: "If + Present Simple, Present Simple",
+                essence: "Used for timeless scientific truths, habits, and guaranteed physical rules.",
+                example: "If you heat ice, it melts.",
+                signal: "always, whenever, naturally, scientifically",
+                distanceExplanation: "Zero distance from reality. The outcome is 100% inevitable every single time."
+            },
+            {
+                id: 1,
+                name: "First Conditional",
+                tag: "High Reality / Real Future Possibility",
+                color: "blue",
+                borderClass: "border-blue-500",
+                bgBadge: "bg-blue-500/20 text-blue-300 border-blue-500/40",
+                formula: "If + Present Simple, WILL + Bare Verb",
+                essence: "Used for realistic, actionable future possibilities that depend on a real condition.",
+                example: "If it rains tomorrow, we will cancel the picnic.",
+                signal: "tomorrow, next week, if, as soon as, unless",
+                distanceExplanation: "1 step from reality. It hasn't happened yet, but it is genuinely likely or plausible."
+            },
+            {
+                id: 2,
+                name: "Second Conditional",
+                tag: "Hypothetical / Unrealistic Now or Future",
+                color: "violet",
+                borderClass: "border-violet-500",
+                bgBadge: "bg-violet-500/20 text-violet-300 border-violet-500/40",
+                formula: "If + Past Simple, WOULD + Bare Verb",
+                essence: "Used for present dreams, imaginary situations, or unlikely future scenarios.",
+                example: "If I won the lottery, I would buy a castle.",
+                signal: "imagine, right now, hypothetically, if I were you",
+                distanceExplanation: "2 steps from reality. NOTICE: The Past Simple verb here does NOT mean past time! It marks distance from current reality."
+            },
+            {
+                id: 3,
+                name: "Third Conditional",
+                tag: "Impossible Past / Counterfactual History",
+                color: "amber",
+                borderClass: "border-amber-500",
+                bgBadge: "bg-amber-500/20 text-amber-300 border-amber-500/40",
+                formula: "If + Past Perfect, WOULD HAVE + Past Participle (V3)",
+                essence: "Used for past regrets, alternative history, and unchangeable past choices.",
+                example: "If I had studied harder, I would have passed yesterday's exam.",
+                signal: "yesterday, last year, back then, missed opportunity",
+                distanceExplanation: "3 steps from reality (Max distance). The event already happened in the past and cannot be rewritten."
+            },
+            {
+                id: 4,
+                name: "Mixed Conditional",
+                tag: "Time-Crossing / Past Cause ➔ Present Outcome",
+                color: "teal",
+                borderClass: "border-teal-500",
+                bgBadge: "bg-teal-500/20 text-teal-300 border-teal-500/40",
+                formula: "If + Past Perfect (Past cause), WOULD + Bare Verb (Present result)",
+                essence: "Connects an unchangeable past event to its continuous consequence in the present moment.",
+                example: "If I had taken that job last year, I would live in Tokyo today.",
+                signal: "back then... today, yesterday... now",
+                distanceExplanation: "Crosses time frames! The cause is locked in past history, but the ripple effect shapes today."
+            }
+        ];
+
+        const PRACTICE_LEVELS = {
+            1: [
+                {
+                    sentence: "If water reaches 100°C, it boils.",
+                    options: ["Zero Conditional", "First Conditional", "Second Conditional", "Third Conditional"],
+                    correct: 0,
+                    rule: "Both verbs are in Present Simple because it expresses an absolute physical law.",
+                    psychology: "Learners often expect 'will' in every conditional. However, scientific facts take double Present Simple."
+                },
+                {
+                    sentence: "If I won the national lottery, I would move to Hawaii.",
+                    options: ["First Conditional", "Second Conditional", "Third Conditional", "Mixed Conditional"],
+                    correct: 1,
+                    rule: "Past Simple ('won') + 'would' = Second Conditional (unrealistic present/future imaginary condition).",
+                    psychology: "Your brain might see 'won' and think past tense. Remember: Past tense form in 'If' = distance from reality NOW, not past time!"
+                },
+                {
+                    sentence: "If we had left ten minutes earlier, we would have caught the flight.",
+                    options: ["Second Conditional", "Third Conditional", "First Conditional", "Mixed Conditional"],
+                    correct: 1,
+                    rule: "Past Perfect ('had left') + 'would have caught' = Third Conditional (impossible past alternative history).",
+                    psychology: "Third conditional uses double-layered past forms because it is completely locked in bygone history."
+                },
+                {
+                    sentence: "If you call her now, she will tell you the truth.",
+                    options: ["Zero Conditional", "First Conditional", "Second Conditional", "Mixed Conditional"],
+                    correct: 1,
+                    rule: "Present Simple ('call') + 'will tell' = First Conditional (a real future possibility).",
+                    psychology: "This is a real scenario occurring in real time, so it stays close to reality with Present + Will."
+                }
+            ],
+            2: [
+                {
+                    context: "Context: Talking about tomorrow's outdoor picnic weather forecast.",
+                    prompt: "Choose the sentence that conveys a REAL, high-probability outcome for tomorrow:",
+                    options: [
+                        "If it rains tomorrow, we will cancel the event.",
+                        "If it rained tomorrow, we would cancel the event."
+                    ],
+                    correct: 0,
+                    rule: "First Conditional ('rains / will cancel') indicates a realistic future possibility.",
+                    psychology: "Option B ('rained / would cancel') is grammatically correct BUT shifts the situation to a purely hypothetical dream/unlikely scenario."
+                },
+                {
+                    context: "Context: You do NOT speak Spanish right now. Someone asks if you can translate.",
+                    prompt: "Which sentence expresses your current hypothetical reality accurately?",
+                    options: [
+                        "If I speak Spanish, I translate it for you.",
+                        "If I spoke Spanish, I would translate it for you."
+                    ],
+                    correct: 1,
+                    rule: "Second Conditional uses 'spoke' (distanced past form) to signal 'I do not speak Spanish right now'.",
+                    psychology: "Option A implies a habitual factual truth. To show that a present situation is untrue, you MUST step back into the past verb form ('spoke')."
+                },
+                {
+                    context: "Context: Reflecting on last night's chess match that you lost.",
+                    prompt: "Which sentence expresses regret about the past outcome?",
+                    options: [
+                        "If I made fewer mistakes, I would win.",
+                        "If I had made fewer mistakes, I would have won."
+                    ],
+                    correct: 1,
+                    rule: "Third conditional ('had made / would have won') is required for alternative past events.",
+                    psychology: "Option A is Second Conditional (imagining a present/future general game). For last night's completed game, you need the Third Conditional."
+                }
+            ],
+            3: [
+                {
+                    sentence: "If I _____ (know) his email right now, I would send him the document immediately.",
+                    options: ["know", "knew", "had known", "would know"],
+                    correct: 1,
+                    rule: "Second conditional requires Past Simple ('knew') in the IF-clause to show distance from present reality.",
+                    psychology: "Learners often fall into the Symmetry Trap and pick 'would know' or try to use Present 'know'. Remember: Distance from reality = Past Simple form!"
+                },
+                {
+                    sentence: "If she gets up early tomorrow, she _____ (catch) the first train.",
+                    options: ["will catch", "would catch", "caught", "had caught"],
+                    correct: 0,
+                    rule: "First conditional main clause takes WILL + Bare Verb.",
+                    psychology: "Because the IF-clause uses Present Simple ('gets up'), the main clause stays close to reality with 'will catch'."
+                },
+                {
+                    sentence: "If we had booked the tickets last month, we _____ (save) hundreds of dollars.",
+                    options: ["would save", "saved", "would have saved", "will save"],
+                    correct: 2,
+                    rule: "Third conditional main clause requires WOULD HAVE + Past Participle ('would have saved').",
+                    psychology: "When the IF-clause is in Past Perfect ('had booked'), the result in the past must match with 'would have + V3'."
+                }
+            ],
+            4: [
+                {
+                    scenario: "Scenario: You didn't eat breakfast this morning at 8 AM. Now it is 2 PM, and your stomach is growling loudly.",
+                    prompt: "Which sentence correctly bridges your past choice with your present situation?",
+                    options: [
+                        "If I ate breakfast, I wouldn't be hungry now.",
+                        "If I had eaten breakfast, I wouldn't be hungry now.",
+                        "If I had eaten breakfast, I wouldn't have been hungry now."
+                    ],
+                    correct: 1,
+                    rule: "Mixed Conditional: Past cause ('If I had eaten') ➔ Present outcome ('I wouldn't be hungry now').",
+                    psychology: "Your brain might try to match tenses ('had eaten' with 'wouldn't have been'). But 'now' forces the result into the present ('wouldn't be')."
+                },
+                {
+                    scenario: "Scenario: You are naturally terrified of heights (a permanent present state). Yesterday, your friends invited you to skydiving, but you refused.",
+                    prompt: "Which sentence correctly expresses this combination?",
+                    options: [
+                        "If I weren't afraid of heights, I would have gone skydiving yesterday.",
+                        "If I hadn't been afraid of heights, I would have gone skydiving yesterday.",
+                        "If I am not afraid of heights, I would go skydiving yesterday."
+                    ],
+                    correct: 0,
+                    rule: "Mixed Conditional: Present characteristic ('If I weren't afraid') ➔ Past action alternative ('I would have gone').",
+                    psychology: "Your fear of heights is a continuous trait today, not just a temporary state yesterday. Thus, the IF-clause uses Second Conditional ('weren't')."
+                }
+            ]
+        };
+
+        const COMMON_TRAPS = [
+            {
+                title: "The 'Would' in IF-Clause Trap",
+                wrong: "If I would have money, I would buy a car.",
+                correct: "If I had money, I would buy a car.",
+                explanation: "The IF-clause establishes the condition; 'would' reflects a modal mood and belongs EXCLUSIVELY in the outcome main clause.",
+                type: "Syntax Error"
+            },
+            {
+                title: "Past Form = Past Time Fallacy",
+                wrong: "If I knew the answer yesterday... (when intending present hypothetical)",
+                correct: "If I knew the answer right now, I'd tell you.",
+                explanation: "Past tense in conditionals does NOT mean past time. It signals psychological distance from the present reality.",
+                type: "Cognitive Misconception"
+            },
+            {
+                title: "The Symmetry Trap",
+                wrong: "If I had known, I had told you.",
+                correct: "If I had known, I would have told you.",
+                explanation: "Learners naturally seek grammatical symmetry. But conditionals are asymmetrical: IF-clause = condition, Main clause = modal result.",
+                type: "Structural Symmetry"
+            },
+            {
+                title: "The Double 'Will' Mistake",
+                wrong: "If it will rain tomorrow, we will stay home.",
+                correct: "If it rains tomorrow, we will stay home.",
+                explanation: "In English, future time is already implied by the context. The IF-clause requires Present Simple for real future conditions.",
+                type: "L1 Transfer Error"
+            },
+            {
+                title: "Confusing 'Was' vs 'Were' Hypothesis",
+                wrong: "If I was you, I would take the job.",
+                correct: "If I were you, I would take the job.",
+                explanation: "In formal hypothetical conditionals, the subjunctive 'were' is used for all subjects to emphasize distance from reality.",
+                type: "Subjunctive Form"
+            },
+            {
+                title: "Overlooking Time-Crossing in Mixed",
+                wrong: "If I had taken the medical test yesterday, I would have passed today.",
+                correct: "If I had taken the medical test yesterday, I would be certified today.",
+                explanation: "When an action is in the past but the result exists right NOW, you must mix Third ('had taken') with Second ('would be').",
+                type: "Temporal Alignment"
+            }
+        ];
+
+        const MASTERY_QUESTIONS = [
+            {
+                q: "If solar panels ________ (install) on every roof, carbon emissions would plummet.",
+                opts: ["are installed", "were installed", "would be installed", "had been installed"],
+                ans: 1,
+                tag: "Second Conditional",
+                trapType: "modal_in_if",
+                exp: "Hypothetical present/future situation uses Past Simple ('were installed') in the IF-clause."
+            },
+            {
+                q: "If I ________ (not miss) my alarm this morning, I would be at my desk right now.",
+                opts: ["didn't miss", "hadn't missed", "wouldn't miss", "haven't missed"],
+                ans: 1,
+                tag: "Mixed Conditional",
+                trapType: "time_confusion",
+                exp: "Past cause ('hadn't missed' this morning) with present result ('would be now') requires Mixed Conditional."
+            },
+            {
+                q: "Whenever you press this red button, the emergency light ________.",
+                opts: ["will turn on", "turns on", "would turn on", "turned on"],
+                ans: 1,
+                tag: "Zero Conditional",
+                trapType: "unnecessary_will",
+                exp: "General operational facts and habits take Present Simple in both clauses (Zero Conditional)."
+            },
+            {
+                q: "If she ________ us about the delay earlier, we wouldn't have waited for hours.",
+                opts: ["told", "would tell", "had told", "has told"],
+                ans: 2,
+                tag: "Third Conditional",
+                trapType: "symmetry_trap",
+                exp: "Past impossibility requires Past Perfect ('had told') in the IF-clause."
+            },
+            {
+                q: "If you ________ hard this week, you will easily pass Friday's test.",
+                opts: ["study", "will study", "studied", "would study"],
+                ans: 0,
+                tag: "First Conditional",
+                trapType: "double_will",
+                exp: "Never put 'will' in the IF-clause! Use Present Simple ('study') for real future conditions."
+            },
+            {
+                q: "If I had learned to code in university, I ________ for a top tech firm today.",
+                opts: ["would have worked", "would work", "will work", "worked"],
+                ans: 1,
+                tag: "Mixed Conditional",
+                trapType: "time_confusion",
+                exp: "Past background education ('had learned') resulting in present job status ('would work today')."
+            },
+            {
+                q: "What ________ you do if you found a wallet full of cash on the street?",
+                opts: ["will", "would", "did", "had"],
+                ans: 1,
+                tag: "Second Conditional",
+                trapType: "modal_choice",
+                exp: "Hypothetical scenario triggered by Past Simple 'found' requires 'would' in the main question clause."
+            },
+            {
+                q: "If ice is exposed to heat, it ________.",
+                opts: ["melts", "will melt", "would melt", "melted"],
+                ans: 0,
+                tag: "Zero Conditional",
+                trapType: "unnecessary_will",
+                exp: "Scientific universal law uses Zero Conditional: Present Simple + Present Simple."
+            },
+            {
+                q: "If we ________ the early train yesterday, we would be enjoying the beach right now.",
+                opts: ["caught", "had caught", "would catch", "have caught"],
+                ans: 1,
+                tag: "Mixed Conditional",
+                trapType: "time_confusion",
+                exp: "Past action ('had caught' yesterday) leading to a present outcome ('would be enjoying now')."
+            },
+            {
+                q: "If I ________ you, I wouldn't sign that contract without reading it.",
+                opts: ["am", "was", "were", "would be"],
+                ans: 2,
+                tag: "Second Conditional",
+                trapType: "subjunctive_were",
+                exp: "Subjunctive 'were' is used in Second Conditional advice ('If I were you')."
+            }
+        ];
+
+        // Exactly 100 exercises (Zero: 15, First: 25, Second: 25, Third: 20, Mixed: 15)
+        const DRILL_BANK = [
+            // ZERO CONDITIONALS (15 items)
+            { id: 1, type: "zero", q: "If you mix red and yellow, you _____ orange.", opts: ["get", "will get", "got", "would get"], ans: 0, exp: "Zero conditional: universal fact (Present Simple + Present Simple)." },
+            { id: 2, type: "zero", q: "Plants die if they _____ enough sunlight.", opts: ["don't get", "won't get", "didn't get", "wouldn't get"], ans: 0, exp: "Zero conditional: biological truth." },
+            { id: 3, type: "zero", q: "If water freezes, it _____ into ice.", opts: ["turns", "will turn", "would turn", "turned"], ans: 0, exp: "Physical fact uses Present Simple." },
+            { id: 4, type: "zero", q: "When the sun goes down, it _____ dark.", opts: ["gets", "will get", "got", "would get"], ans: 0, exp: "Natural law: Present Simple + Present Simple." },
+            { id: 5, type: "zero", q: "If you press power on this remote, the TV _____ on.", opts: ["turns", "will turn", "would turn", "turned"], ans: 0, exp: "Habitual mechanism rule." },
+            { id: 6, type: "zero", q: "If people don't sleep, they _____ tired.", opts: ["feel", "will feel", "would feel", "felt"], ans: 0, exp: "Universal human physiological rule." },
+            { id: 7, type: "zero", q: "Iron rusts if it _____ exposed to water and oxygen.", opts: ["is", "will be", "would be", "was"], ans: 0, exp: "Chemical process statement." },
+            { id: 8, type: "zero", q: "If you multiply eight by five, you _____ forty.", opts: ["get", "will get", "got", "would get"], ans: 0, exp: "Mathematical constant truth." },
+            { id: 9, type: "zero", q: "When oil is added to water, it _____ on top.", opts: ["floats", "will float", "would float", "floated"], ans: 0, exp: "Scientific density principle." },
+            { id: 10, type: "zero", q: "If you boil salt water, the water _____ leaving salt behind.", opts: ["evaporates", "will evaporate", "would evaporate", "evaporated"], ans: 0, exp: "Physical fact." },
+            { id: 11, type: "zero", q: "Babies cry when they _____ hungry.", opts: ["are", "will be", "would be", "were"], ans: 0, exp: "General behavioral habit." },
+            { id: 12, type: "zero", q: "If you heat sugar, it _____ into caramel.", opts: ["melts", "will melt", "would melt", "melted"], ans: 0, exp: "Culinary physical fact." },
+            { id: 13, type: "zero", q: "Wood floats if you _____ it into water.", opts: ["throw", "will throw", "would throw", "threw"], ans: 0, exp: "Physical buoyancy principle." },
+            { id: 14, type: "zero", q: "If you drop a glass on concrete, it _____.", opts: ["breaks", "will break", "would break", "broke"], ans: 0, exp: "Guaranteed natural consequence." },
+            { id: 15, type: "zero", q: "Whenever I eat dairy, I _____ sick.", opts: ["feel", "will feel", "would feel", "felt"], ans: 0, exp: "Personal biological reaction/habit." },
+
+            // FIRST CONDITIONALS (25 items)
+            { id: 16, type: "first", q: "If it rains tomorrow, we _____ at home.", opts: ["will stay", "stay", "would stay", "stayed"], ans: 0, exp: "First conditional: real future possibility (Present + Will)." },
+            { id: 17, type: "first", q: "If you don't hurry, you _____ the school bus.", opts: ["will miss", "miss", "would miss", "missed"], ans: 0, exp: "Real future consequence." },
+            { id: 18, type: "first", q: "She will pass the exam if she _____ every day.", opts: ["studies", "will study", "studied", "would study"], ans: 0, exp: "IF-clause takes Present Simple, NEVER 'will'." },
+            { id: 19, type: "first", q: "If I see Mark tonight, I _____ him your message.", opts: ["will give", "give", "would give", "gave"], ans: 0, exp: "Real future plan." },
+            { id: 20, type: "first", q: "Unless you _____ now, you will be late.", opts: ["leave", "will leave", "left", "would leave"], ans: 0, exp: "'Unless' means 'if not' and takes Present Simple." },
+            { id: 21, type: "first", q: "If they offer me the promotion, I _____ it.", opts: ["will accept", "accept", "would accept", "accepted"], ans: 0, exp: "Realistic future career event." },
+            { id: 22, type: "first", q: "What _____ if the flight is delayed?", opts: ["will you do", "do you do", "would you do", "did you do"], ans: 0, exp: "Real future contingency question." },
+            { id: 23, type: "first", q: "If the traffic is heavy, we _____ late for dinner.", opts: ["will be", "are", "would be", "were"], ans: 0, exp: "Real outcome in main clause uses 'will'." },
+            { id: 24, type: "first", q: "If you save money now, you _____ a smartphone next month.", opts: ["will buy", "buy", "would buy", "bought"], ans: 0, exp: "Future real possibility." },
+            { id: 25, type: "first", q: "As soon as he arrives, we _____ the meeting.", opts: ["will start", "start", "would start", "started"], ans: 0, exp: "Time clause condition." },
+            { id: 26, type: "first", q: "If she _____ hard, she will win the scholarship.", opts: ["works", "will work", "worked", "would work"], ans: 0, exp: "Present simple in the condition clause." },
+            { id: 27, type: "first", q: "We will go hiking if the weather _____ clear.", opts: ["is", "will be", "would be", "was"], ans: 0, exp: "Condition clause uses Present Simple." },
+            { id: 28, type: "first", q: "If you touch that hot pan, you _____ yourself.", opts: ["will burn", "burn", "would burn", "burned"], ans: 0, exp: "Immediate warning consequence." },
+            { id: 29, type: "first", q: "If he calls you tonight, what _____ tell him?", opts: ["will you", "do you", "would you", "did you"], ans: 0, exp: "Main clause question format." },
+            { id: 30, type: "first", q: "If we finish early, we _____ out for coffee.", opts: ["will go", "go", "would go", "went"], ans: 0, exp: "Plausible future plan." },
+            { id: 31, type: "first", q: "If you don't water these flowers, they _____.", opts: ["will wither", "wither", "would wither", "withered"], ans: 0, exp: "Plausible future biological result." },
+            { id: 32, type: "first", q: "The manager will be furious if the report _____ late.", opts: ["is", "will be", "would be", "was"], ans: 0, exp: "Condition clause uses Present Simple." },
+            { id: 33, type: "first", q: "If I find your keys, I _____ you right away.", opts: ["will call", "call", "would call", "called"], ans: 0, exp: "Real future promise." },
+            { id: 34, type: "first", q: "If the temperature drops below zero tonight, roads _____ icy.", opts: ["will become", "become", "would become", "became"], ans: 0, exp: "Meteorological real prediction." },
+            { id: 35, type: "first", q: "If you bake a cake, I _____ a piece!", opts: ["will eat", "eat", "would eat", "ate"], ans: 0, exp: "Playful real promise." },
+            { id: 36, type: "first", q: "You won't understand if you _____ listen carefully.", opts: ["don't", "won't", "didn't", "wouldn't"], ans: 0, exp: "IF-clause condition in present negative." },
+            { id: 37, type: "first", q: "If the company grows, they _____ more staff.", opts: ["will hire", "hire", "would hire", "hired"], ans: 0, exp: "Real business prediction." },
+            { id: 38, type: "first", q: "If you order the food now, it _____ here in 20 minutes.", opts: ["will arrive", "arrives", "would arrive", "arrived"], ans: 0, exp: "Real delivery expectation." },
+            { id: 39, type: "first", q: "What will happen if we _____ press this button?", opts: ["don't", "won't", "didn't", "wouldn't"], ans: 0, exp: "Real question condition." },
+            { id: 40, type: "first", q: "If I win this match, I _____ to the finals.", opts: ["will advance", "advance", "would advance", "advanced"], ans: 0, exp: "Sports competition real future." },
+
+            // SECOND CONDITIONALS (25 items)
+            { id: 41, type: "second", q: "If I _____ a billionaire, I would fund space research.", opts: ["were", "am", "will be", "had been"], ans: 0, exp: "Second conditional: hypothetical present dream (Past form 'were')." },
+            { id: 42, type: "second", q: "If she knew his number, she _____ him right now.", opts: ["would call", "will call", "calls", "called"], ans: 0, exp: "Hypothetical outcome uses 'would + bare verb'." },
+            { id: 43, type: "second", q: "If I _____ speak Japanese fluently, I would move to Tokyo today.", opts: ["could", "can", "will be able to", "had been able"], ans: 0, exp: "Past simple form 'could' marks distance from current reality." },
+            { id: 44, type: "second", q: "What would you do if you _____ a ghost?", opts: ["saw", "see", "will see", "had seen"], ans: 0, exp: "Hypothetical question condition." },
+            { id: 45, type: "second", q: "If we had a bigger apartment, we _____ a dog.", opts: ["would adopt", "will adopt", "adopt", "adopted"], ans: 0, exp: "Present unreal situation outcome." },
+            { id: 46, type: "second", q: "If I were you, I _____ that job offer immediately.", opts: ["would accept", "will accept", "accept", "accepted"], ans: 0, exp: "Advice structure: 'If I were you, I would...'" },
+            { id: 47, type: "second", q: "He _____ happier if he didn't work 80 hours a week.", opts: ["would be", "will be", "is", "was"], ans: 0, exp: "Main clause modal result." },
+            { id: 48, type: "second", q: "If aliens landed on Earth today, everyone _____ shocked.", opts: ["would be", "will be", "is", "were"], ans: 0, exp: "Unlikely hypothetical event." },
+            { id: 49, type: "second", q: "If I _____ how to drive, I would rent a sports car.", opts: ["knew", "know", "will know", "had known"], ans: 0, exp: "Distance from reality in the IF-clause." },
+            { id: 50, type: "second", q: "She would travel the world if she _____ afraid of flying.", opts: ["weren't", "isn't", "won't be", "hadn't been"], ans: 0, exp: "Present unreal state condition." },
+            { id: 51, type: "second", q: "If we lived near the ocean, we _____ surfing every weekend.", opts: ["would go", "will go", "go", "went"], ans: 0, exp: "Present imaginary routine." },
+            { id: 52, type: "second", q: "If I _____ your secret, I wouldn't tell a soul.", opts: ["knew", "know", "will know", "had known"], ans: 0, exp: "Hypothetical condition clause." },
+            { id: 53, type: "second", q: "Where would you live if you _____ choose any country?", opts: ["could", "can", "will", "had"], ans: 0, exp: "Imaginary present choice." },
+            { id: 54, type: "second", q: "If cars _____ fly, traffic jams would be history.", opts: ["could", "can", "will", "would"], ans: 0, exp: "Physically impossible present condition." },
+            { id: 55, type: "second", q: "I _____ that antique clock if it weren't so overpriced.", opts: ["would buy", "will buy", "buy", "bought"], ans: 0, exp: "Present unreal buying intention." },
+            { id: 56, type: "second", q: "If he _____ more carefully, he wouldn't crash so often.", opts: ["drove", "drives", "will drive", "had driven"], ans: 0, exp: "Present unreal habit condition." },
+            { id: 57, type: "second", q: "If I didn't have to work today, I _____ in bed.", opts: ["would stay", "will stay", "stay", "stayed"], ans: 0, exp: "Present unreal situation." },
+            { id: 58, type: "second", q: "How would you feel if someone _____ your idea?", opts: ["stole", "steals", "will steal", "had stolen"], ans: 0, exp: "Hypothetical scenario condition." },
+            { id: 59, type: "second", q: "If humans _____ wings, we wouldn't need airplanes.", opts: ["had", "have", "will have", "would have"], ans: 0, exp: "Anatomically impossible present condition." },
+            { id: 60, type: "second", q: "If my phone _____ broken, I would reply to your text.", opts: ["weren't", "isn't", "won't be", "hadn't been"], ans: 0, exp: "Present unreal state." },
+            { id: 61, type: "second", q: "She _____ you if you asked her nicely.", opts: ["would help", "will help", "helps", "helped"], ans: 0, exp: "Hypothetical outcome." },
+            { id: 62, type: "second", q: "If I _____ time, I would learn play the cello.", opts: ["had", "have", "will have", "would have"], ans: 0, exp: "Present unreal resource availability." },
+            { id: 63, type: "second", q: "What game would you play if you _____ only pick one?", opts: ["could", "can", "will", "had"], ans: 0, exp: "Imaginary present dilemma." },
+            { id: 64, type: "second", q: "If this laptop _____ so slow, I would finish sooner.", opts: ["weren't", "isn't", "won't be", "hadn't been"], ans: 0, exp: "Present unreal hardware state." },
+            { id: 65, type: "second", q: "If we _____ a lottery ticket today, we might get lucky.", opts: ["bought", "buy", "will buy", "had bought"], ans: 0, exp: "Unlikely present condition." },
+
+            // THIRD CONDITIONALS (20 items)
+            { id: 66, type: "third", q: "If I had studied harder, I _____ yesterday's test.", opts: ["would have passed", "would pass", "will pass", "passed"], ans: 0, exp: "Third conditional: impossible past regret (would have + V3)." },
+            { id: 67, type: "third", q: "She wouldn't have missed the flight if she _____ a taxi.", opts: ["had taken", "took", "takes", "would take"], ans: 0, exp: "IF-clause past impossibility uses Past Perfect ('had taken')." },
+            { id: 68, type: "third", q: "If we had known about the storm last night, we _____ at home.", opts: ["would have stayed", "would stay", "will stay", "stayed"], ans: 0, exp: "Unchangeable past outcome." },
+            { id: 69, type: "third", q: "If he _____ his helmet, he would have been severely injured.", opts: ["hadn't worn", "didn't wear", "doesn't wear", "wouldn't wear"], ans: 0, exp: "Past counterfactual condition." },
+            { id: 70, type: "third", q: "They _____ the match if the referee hadn't made that error.", opts: ["would have won", "would win", "will win", "won"], ans: 0, exp: "Completed past sports alternative." },
+            { id: 71, type: "third", q: "If you had told me earlier, I _____ you move.", opts: ["would have helped", "would help", "will help", "helped"], ans: 0, exp: "Past missed opportunity." },
+            { id: 72, type: "third", q: "What would you have done if you _____ the train last night?", opts: ["had missed", "missed", "miss", "would miss"], ans: 0, exp: "Past alternative history question." },
+            { id: 73, type: "third", q: "If I hadn't lost my wallet, I _____ for the dinner.", opts: ["would have paid", "would pay", "will pay", "paid"], ans: 0, exp: "Past event outcome." },
+            { id: 74, type: "third", q: "If the driver _____ at the red light, the accident wouldn't have happened.", opts: ["had stopped", "stopped", "stops", "would stop"], ans: 0, exp: "Past traffic accident condition." },
+            { id: 75, type: "third", q: "She would have gotten the job if she _____ more confident during the interview.", opts: ["had been", "was", "is", "would be"], ans: 0, exp: "Past job interview counterfactual." },
+            { id: 76, type: "third", q: "If we _____ to the forecast, we wouldn't have brought t-shirts.", opts: ["had listened", "listened", "listen", "would listen"], ans: 0, exp: "Past mistake regret." },
+            { id: 77, type: "third", q: "If I had seen you at the party last Friday, I _____ hello.", opts: ["would have said", "would say", "will say", "said"], ans: 0, exp: "Past social interaction regret." },
+            { id: 78, type: "third", q: "The concert wouldn't have been canceled if the lead singer _____ sick.", opts: ["hadn't fallen", "didn't fall", "doesn't fall", "wouldn't fall"], ans: 0, exp: "Past event cancellation cause." },
+            { id: 79, type: "third", q: "If you had set an alarm, you _____ overslown this morning.", opts: ["wouldn't have", "wouldn't be", "won't have", "didn't"], ans: 0, exp: "Past morning regret." },
+            { id: 80, type: "third", q: "If they had saved their work, they _____ hours of progress.", opts: ["wouldn't have lost", "wouldn't lose", "won't lose", "didn't lose"], ans: 0, exp: "Past software data loss." },
+            { id: 81, type: "third", q: "Would you have accepted the offer if they _____ you more?", opts: ["had offered", "offered", "offer", "would offer"], ans: 0, exp: "Past salary negotiation." },
+            { id: 82, type: "third", q: "If the firefighters _____ so quickly, the entire building would have burned.", opts: ["hadn't arrived", "didn't arrive", "don't arrive", "wouldn't arrive"], ans: 0, exp: "Past emergency response." },
+            { id: 83, type: "third", q: "If I had checked the map, I _____ down the wrong highway.", opts: ["wouldn't have driven", "wouldn't drive", "won't drive", "didn't drive"], ans: 0, exp: "Past navigation error." },
+            { id: 84, type: "third", q: "She wouldn't have bought that dress if it _____ on sale.", opts: ["hadn't been", "wasn't", "isn't", "wouldn't be"], ans: 0, exp: "Past shopping decision." },
+            { id: 85, type: "third", q: "If we had taken a camera, we _____ beautiful photos.", opts: ["would have taken", "would take", "will take", "took"], ans: 0, exp: "Past holiday opportunity missed." },
+
+            // MIXED CONDITIONALS (15 items)
+            { id: 86, type: "mixed", q: "If I had won the lottery last year, I _____ in a mansion today.", opts: ["would live", "would have lived", "will live", "lived"], ans: 0, exp: "Mixed: Past cause ('had won') ➔ Present outcome ('would live today')." },
+            { id: 87, type: "mixed", q: "If she weren't afraid of flying, she _____ to Paris last week.", opts: ["would have flown", "would fly", "will fly", "flew"], ans: 0, exp: "Mixed: Continuous present state ('weren't afraid') ➔ Past action choice." },
+            { id: 88, type: "mixed", q: "If I had taken my umbrella this morning, I _____ wet right now.", opts: ["wouldn't be", "wouldn't have been", "won't be", "am not"], ans: 0, exp: "Past action ➔ Present physical state." },
+            { id: 89, type: "mixed", q: "If he spoke German fluently, he _____ the job translation yesterday.", opts: ["would have done", "would do", "will do", "did"], ans: 0, exp: "Present ability ➔ Past performance." },
+            { id: 90, type: "mixed", q: "If we had booked the hotel in advance, we _____ a room tonight.", opts: ["would have", "would have had", "will have", "had"], ans: 0, exp: "Past reservation ➔ Present lodging status." },
+            { id: 91, type: "mixed", q: "If I hadn't eaten that entire pizza an hour ago, I _____ sick now.", opts: ["wouldn't feel", "wouldn't have felt", "won't feel", "didn't feel"], ans: 0, exp: "Recent past meal ➔ Current stomach state." },
+            { id: 92, type: "mixed", q: "If she were a better developer, her app _____ crashing yesterday.", opts: ["wouldn't have kept", "wouldn't keep", "won't keep", "didn't keep"], ans: 0, exp: "Permanent present skill level ➔ Past incident." },
+            { id: 93, type: "mixed", q: "If I had born in Italy, I _____ Italian right now.", opts: ["would speak", "would have spoken", "will speak", "spoke"], ans: 0, exp: "Past birth origin ➔ Present language fluency." },
+            { id: 94, type: "mixed", q: "If they had invested in Bitcoin in 2010, they _____ rich today.", opts: ["would be", "would have been", "will be", "were"], ans: 0, exp: "Past investment choice ➔ Present wealth status." },
+            { id: 95, type: "mixed", q: "If I weren't so busy this week, I _____ you move yesterday.", opts: ["would have helped", "would help", "will help", "helped"], ans: 0, exp: "Current busy week ➔ Past assistance failure." },
+            { id: 96, type: "mixed", q: "If he had gone to bed earlier last night, he _____ so exhausted now.", opts: ["wouldn't be", "wouldn't have been", "won't be", "isn't"], ans: 0, exp: "Past sleep habit ➔ Present tiredness." },
+            { id: 97, type: "mixed", q: "If I were better at math, I _____ that calculus exam last semester.", opts: ["would have aced", "would ace", "will ace", "aced"], ans: 0, exp: "General skill trait ➔ Specific past test outcome." },
+            { id: 98, type: "mixed", q: "If we had installed solar panels last spring, our electric bill _____ lower this month.", opts: ["would be", "would have been", "will be", "was"], ans: 0, exp: "Past installation ➔ Current billing cycle." },
+            { id: 99, type: "mixed", q: "If she had saved her work, she _____ stress-free right now.", opts: ["would be", "would have been", "will be", "is"], ans: 0, exp: "Past action ➔ Present emotional state." },
+            { id: 100, type: "mixed", q: "If I were you, I _____ that impolite message last night.", opts: ["wouldn't have sent", "wouldn't send", "won't send", "didn't send"], ans: 0, exp: "Present identity perspective ('were you') ➔ Specific past action." }
+        ];
+
+        let activeMainTab = "guided"; // 'guided' | 'bank'
+
+        // Guided trainer state
+        let currentScaleIndex = 0;
+        let currentLevel = 1;
+        let currentQuestionIndex = 0;
+
+        let masteryState = {
+            active: false,
+            currentIndex: 0,
+            answers: [],
+            errorsByTrap: { modal_in_if: 0, time_confusion: 0, symmetry_trap: 0, unnecessary_will: 0, double_will: 0, subjunctive_were: 0 }
+        };
+
+        // 100-Drill Bank State
+        let bankState = {
+            activeFilter: 'all', // 'all', 'zero', 'first', 'second', 'third', 'mixed'
+            currentIndex: 0, // position in filtered array
+            solvedCount: 0,
+            correctCount: 0,
+            streak: 0,
+            userAnswers: {}, // id: { selected: number, isCorrect: boolean }
+            drawerOpen: false
+        };
+
+        window.addEventListener('DOMContentLoaded', () => {
+            renderScaleCard(0);
+            renderLevelQuestion();
+            renderCommonTraps();
+            initDrillBank();
+        });
+
+        function switchMainTab(tabKey) {
+            activeMainTab = tabKey;
+            const guidedBtn = document.getElementById('main-tab-guided');
+            const bankBtn = document.getElementById('main-tab-bank');
+            const guidedView = document.getElementById('view-guided-trainer');
+            const bankView = document.getElementById('view-drill-bank');
+
+            if (tabKey === 'guided') {
+                guidedBtn.className = "px-4 py-1.5 rounded-lg text-xs font-bold transition bg-indigo-600 text-white shadow";
+                bankBtn.className = "px-4 py-1.5 rounded-lg text-xs font-bold transition text-slate-400 hover:text-white flex items-center gap-1.5";
+                guidedView.classList.remove('hidden');
+                bankView.classList.add('hidden');
+            } else {
+                bankBtn.className = "px-4 py-1.5 rounded-lg text-xs font-bold transition bg-indigo-600 text-white shadow flex items-center gap-1.5";
+                guidedBtn.className = "px-4 py-1.5 rounded-lg text-xs font-bold transition text-slate-400 hover:text-white";
+                bankView.classList.remove('hidden');
+                guidedView.classList.add('hidden');
+                renderBankQuestion();
+            }
+        }
+
+        function selectScaleNode(index) {
+            currentScaleIndex = index;
+            for (let i = 0; i <= 4; i++) {
+                const nodeBtn = document.getElementById(`node-${i}`);
+                if (i === index) nodeBtn.classList.add('active');
+                else nodeBtn.classList.remove('active');
+            }
+            renderScaleCard(index);
+        }
+
+        function renderScaleCard(index) {
+            const data = SCALE_DATA[index];
+            const cardContainer = document.getElementById('scale-card');
+            
+            cardContainer.className = `mt-6 p-6 rounded-xl border ${data.borderClass} bg-slate-950/90 transition-all duration-300 fade-in`;
+            cardContainer.innerHTML = `
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 pb-4 border-b border-slate-800">
+                    <div>
+                        <span class="inline-block px-2.5 py-0.5 rounded-full text-xs font-mono font-semibold border ${data.bgBadge} mb-2">
+                            ${data.tag}
+                        </span>
+                        <h3 class="text-xl font-bold text-white">${data.name}</h3>
+                    </div>
+                    <div class="bg-slate-900 px-4 py-2 rounded-lg border border-slate-800 font-mono text-xs text-indigo-300">
+                        ${data.formula}
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+                    <div class="space-y-3">
+                        <div>
+                            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Essence</h4>
+                            <p class="text-sm text-slate-200 leading-relaxed">${data.essence}</p>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Live Example</h4>
+                            <p class="text-sm font-medium text-emerald-400 bg-emerald-950/30 p-3 rounded-lg border border-emerald-800/40">
+                                "${data.example}"
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div>
+                            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Signal Markers</h4>
+                            <p class="text-xs font-mono text-slate-300 bg-slate-900 p-2.5 rounded-lg border border-slate-800">${data.signal}</p>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Distance-from-Reality Logic</h4>
+                            <p class="text-xs text-slate-300 bg-indigo-950/20 p-2.5 rounded-lg border border-indigo-900/30 leading-relaxed">
+                                💡 ${data.distanceExplanation}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function switchLevel(lvl) {
+            currentLevel = lvl;
+            currentQuestionIndex = 0;
+            
+            for (let i = 1; i <= 4; i++) {
+                const tab = document.getElementById(`lvl-tab-${i}`);
+                if (i === lvl) {
+                    tab.className = "px-3 py-1.5 rounded-lg text-xs font-semibold transition bg-indigo-600 text-white shadow";
+                } else {
+                    tab.className = "px-3 py-1.5 rounded-lg text-xs font-semibold transition text-slate-400 hover:text-white";
+                }
+            }
+
+            const titles = {
+                1: "Level 1: Type Recognition",
+                2: "Level 2: Discrimination & Context",
+                3: "Level 3: Precise Production",
+                4: "Level 4: Real-World Scenarios"
+            };
+            document.getElementById('level-title-label').innerText = titles[lvl];
+
+            renderLevelQuestion();
+        }
+
+        function renderLevelQuestion() {
+            const questions = PRACTICE_LEVELS[currentLevel];
+            const q = questions[currentQuestionIndex];
+            const total = questions.length;
+
+            document.getElementById('level-progress-count').innerText = `Item ${currentQuestionIndex + 1} of ${total}`;
+            const pct = ((currentQuestionIndex + 1) / total) * 100;
+            document.getElementById('level-progress-bar').style.width = `${pct}%`;
+
+            const feedbackPanel = document.getElementById('feedback-panel');
+            feedbackPanel.classList.add('hidden');
+            document.getElementById('next-question-btn').classList.add('hidden');
+
+            const container = document.getElementById('practice-card-content');
+            container.className = "space-y-6 fade-in";
+
+            let promptHtml = "";
+
+            if (currentLevel === 1) {
+                promptHtml = `
+                    <div class="bg-slate-950 p-5 rounded-xl border border-slate-800">
+                        <span class="text-xs text-slate-400 font-mono block mb-1">Analyze this sentence structure:</span>
+                        <p class="text-lg font-bold text-white">"${q.sentence}"</p>
+                    </div>
+                `;
+            } else if (currentLevel === 2) {
+                promptHtml = `
+                    <div class="bg-slate-950 p-5 rounded-xl border border-slate-800 space-y-2">
+                        <p class="text-xs font-mono text-indigo-400">${q.context}</p>
+                        <p class="text-base font-bold text-white">${q.prompt}</p>
+                    </div>
+                `;
+            } else if (currentLevel === 3) {
+                promptHtml = `
+                    <div class="bg-slate-950 p-5 rounded-xl border border-slate-800">
+                        <span class="text-xs text-slate-400 font-mono block mb-1">Select the exact verb form needed:</span>
+                        <p class="text-lg font-bold text-white">"${q.sentence}"</p>
+                    </div>
+                `;
+            } else if (currentLevel === 4) {
+                promptHtml = `
+                    <div class="bg-slate-950 p-5 rounded-xl border border-slate-800 space-y-2">
+                        <p class="text-xs font-mono text-teal-400">${q.scenario}</p>
+                        <p class="text-base font-bold text-white">${q.prompt}</p>
+                    </div>
+                `;
+            }
+
+            let optionsHtml = '<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">';
+            q.options.forEach((opt, idx) => {
+                optionsHtml += `
+                    <button onclick="submitAnswer(${idx})" id="opt-btn-${idx}" class="btn-option p-4 rounded-xl border border-slate-800 bg-slate-950/60 hover:bg-slate-800/80 text-left text-sm font-medium text-slate-200 transition flex items-center justify-between group">
+                        <span>${opt}</span>
+                        <span class="w-6 h-6 rounded-full border border-slate-700 group-hover:border-indigo-400 flex items-center justify-center text-xs text-slate-500 font-mono">${String.fromCharCode(65 + idx)}</span>
+                    </button>
+                `;
+            });
+            optionsHtml += '</div>';
+
+            container.innerHTML = promptHtml + optionsHtml;
+        }
+
+        function submitAnswer(selectedIdx) {
+            const questions = PRACTICE_LEVELS[currentLevel];
+            const q = questions[currentQuestionIndex];
+            const isCorrect = selectedIdx === q.correct;
+
+            q.options.forEach((_, idx) => {
+                const btn = document.getElementById(`opt-btn-${idx}`);
+                btn.disabled = true;
+                if (idx === q.correct) {
+                    btn.classList.add('border-emerald-500', 'bg-emerald-950/40', 'text-emerald-200');
+                } else if (idx === selectedIdx && !isCorrect) {
+                    btn.classList.add('border-rose-500', 'bg-rose-950/40', 'text-rose-200');
+                } else {
+                    btn.classList.add('opacity-40');
+                }
+            });
+
+            const feedbackPanel = document.getElementById('feedback-panel');
+            feedbackPanel.classList.remove('hidden');
+
+            if (isCorrect) {
+                feedbackPanel.className = "mt-6 p-5 rounded-xl border border-emerald-500/40 bg-emerald-950/30 text-emerald-100 fade-in space-y-3";
+                feedbackPanel.innerHTML = `
+                    <div class="flex items-center gap-2 font-bold text-emerald-400 text-base">
+                        <span>✓ Excellent Intuition!</span>
+                    </div>
+                    <p class="text-sm leading-relaxed"><strong class="text-white">Rule Recall:</strong> ${q.rule}</p>
+                    <p class="text-xs text-emerald-300/80 bg-emerald-900/30 p-2.5 rounded-lg border border-emerald-800/40">
+                        💡 <strong>Scale Connection:</strong> Your brain correctly calculated the distance from reality!
+                    </p>
+                `;
+            } else {
+                feedbackPanel.className = "mt-6 p-5 rounded-xl border border-rose-500/40 bg-rose-950/30 text-rose-100 fade-in space-y-4";
+                feedbackPanel.innerHTML = `
+                    <div class="flex items-center gap-2 font-bold text-rose-400 text-base">
+                        <span>✗ Not Quite — Micro-Lesson Time</span>
+                    </div>
+                    <div class="space-y-2 text-sm">
+                        <p><strong class="text-white">a) Correct Form:</strong> <span class="font-bold text-emerald-400">${q.options[q.correct]}</span></p>
+                        <p><strong class="text-white">b) Rule Violated:</strong> ${q.rule}</p>
+                        <div class="p-3 rounded-lg bg-rose-900/30 border border-rose-800/50 text-xs leading-relaxed text-rose-200">
+                            <strong class="text-rose-300 block mb-1">c) Psychological Diagnosis (Why your brain chose this):</strong>
+                            ${q.psychology}
+                        </div>
+                    </div>
+                `;
+            }
+
+            document.getElementById('next-question-btn').classList.remove('hidden');
+        }
+
+        function nextQuestion() {
+            const questions = PRACTICE_LEVELS[currentLevel];
+            if (currentQuestionIndex < questions.length - 1) {
+                currentQuestionIndex++;
+                renderLevelQuestion();
+            } else {
+                if (currentLevel < 4) {
+                    switchLevel(currentLevel + 1);
+                } else {
+                    alert("Congratulations! You completed all 4 practice levels. Now try the Final Mastery Check or jump into the 100-Drill Practice Bank!");
+                    document.getElementById('mastery-section').scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        }
+
+        function renderCommonTraps() {
+            const grid = document.getElementById('traps-grid');
+            grid.innerHTML = "";
+
+            COMMON_TRAPS.forEach(trap => {
+                const card = document.createElement('div');
+                card.className = "p-5 rounded-xl bg-slate-950/80 border border-slate-800 hover:border-slate-700 transition flex flex-col justify-between space-y-4";
+                card.innerHTML = `
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span class="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700">${trap.type}</span>
+                        </div>
+                        <h3 class="text-sm font-bold text-white">${trap.title}</h3>
+                        
+                        <div class="space-y-1.5 text-xs font-mono">
+                            <div class="p-2 rounded bg-rose-950/40 border border-rose-800/40 text-rose-300 line-through">
+                                ✗ ${trap.wrong}
+                            </div>
+                            <div class="p-2 rounded bg-emerald-950/40 border border-emerald-800/40 text-emerald-300">
+                                ✓ ${trap.correct}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-2.5 rounded bg-slate-900 border border-slate-800 text-xs text-slate-300 leading-relaxed">
+                        <strong class="text-indigo-400">Why your brain does this:</strong> ${trap.explanation}
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function startMasteryCheck() {
+            masteryState.active = true;
+            masteryState.currentIndex = 0;
+            masteryState.answers = [];
+            masteryState.errorsByTrap = { modal_in_if: 0, time_confusion: 0, symmetry_trap: 0, unnecessary_will: 0, double_will: 0, subjunctive_were: 0 };
+
+            renderMasteryQuestion();
+        }
+
+        function renderMasteryQuestion() {
+            const container = document.getElementById('mastery-container');
+            const q = MASTERY_QUESTIONS[masteryState.currentIndex];
+            const total = MASTERY_QUESTIONS.length;
+
+            container.className = "space-y-6 fade-in";
+            container.innerHTML = `
+                <div class="flex items-center justify-between text-xs text-slate-400">
+                    <span class="font-mono text-teal-400">Mastery Assessment • Question ${masteryState.currentIndex + 1} of ${total}</span>
+                    <span class="px-2 py-0.5 rounded bg-slate-800 border border-slate-700 text-slate-300">${q.tag}</span>
+                </div>
+
+                <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                    <div class="h-full bg-teal-500 transition-all duration-300" style="width: ${((masteryState.currentIndex + 1)/total)*100}%"></div>
+                </div>
+
+                <div class="bg-slate-950 p-6 rounded-xl border border-slate-800">
+                    <p class="text-lg font-bold text-white">"${q.q}"</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    ${q.opts.map((opt, idx) => `
+                        <button onclick="handleMasteryChoice(${idx})" class="btn-option p-4 rounded-xl border border-slate-800 bg-slate-950/60 hover:bg-slate-800/80 text-left text-sm font-medium text-slate-200 transition flex items-center justify-between group">
+                            <span>${opt}</span>
+                            <span class="w-6 h-6 rounded-full border border-slate-700 group-hover:border-teal-400 flex items-center justify-center text-xs text-slate-500 font-mono">${String.fromCharCode(65 + idx)}</span>
+                        </button>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        function handleMasteryChoice(choiceIdx) {
+            const q = MASTERY_QUESTIONS[masteryState.currentIndex];
+            const isCorrect = choiceIdx === q.ans;
+
+            masteryState.answers.push({
+                question: q.q,
+                userAns: choiceIdx,
+                correctAns: q.ans,
+                isCorrect: isCorrect,
+                trapType: q.trapType
+            });
+
+            if (!isCorrect) {
+                masteryState.errorsByTrap[q.trapType] = (masteryState.errorsByTrap[q.trapType] || 0) + 1;
+            }
+
+            if (masteryState.currentIndex < MASTERY_QUESTIONS.length - 1) {
+                masteryState.currentIndex++;
+                renderMasteryQuestion();
+            } else {
+                renderMasteryDiagnosis();
+            }
+        }
+
+        function renderMasteryDiagnosis() {
+            const container = document.getElementById('mastery-container');
+            const total = MASTERY_QUESTIONS.length;
+            const correctCount = masteryState.answers.filter(a => a.isCorrect).length;
+            const scorePct = Math.round((correctCount / total) * 100);
+
+            let patternAnalysis = [];
+            
+            if (masteryState.errorsByTrap.modal_in_if > 0 || masteryState.errorsByTrap.double_will > 0) {
+                patternAnalysis.push(`
+                    <div class="p-3.5 rounded-xl bg-slate-900 border border-slate-800 text-xs space-y-1">
+                        <span class="font-bold text-amber-400 block">⚠️ Modals in IF-Clause Pattern</span>
+                        <p class="text-slate-300">You placed 'will' or 'would' inside the IF-clause. Remember Anchor Rule #2: The condition clause sets the stage with a tense form; modals like 'will/would' live exclusively in the result clause!</p>
+                    </div>
+                `);
+            }
+
+            if (masteryState.errorsByTrap.time_confusion > 0) {
+                patternAnalysis.push(`
+                    <div class="p-3.5 rounded-xl bg-slate-900 border border-slate-800 text-xs space-y-1">
+                        <span class="font-bold text-teal-400 block">⌛ Time Frame & Mixed Conditionals Pattern</span>
+                        <p class="text-slate-300">You struggled with time-crossing scenarios. Remember: If the condition is in the past ('had done') but the outcome is right NOW, use 'would + bare verb' instead of 'would have'.</p>
+                    </div>
+                `);
+            }
+
+            if (masteryState.errorsByTrap.symmetry_trap > 0 || masteryState.errorsByTrap.unnecessary_will > 0) {
+                patternAnalysis.push(`
+                    <div class="p-3.5 rounded-xl bg-slate-900 border border-slate-800 text-xs space-y-1">
+                        <span class="font-bold text-indigo-400 block">🔄 Symmetry Trap Pattern</span>
+                        <p class="text-slate-300">Your brain sought symmetry across both halves of the sentence. Conditional sentences are inherently asymmetrical!</p>
+                    </div>
+                `);
+            }
+
+            if (patternAnalysis.length === 0) {
+                patternAnalysis.push(`
+                    <div class="p-3.5 rounded-xl bg-emerald-950/40 border border-emerald-800/50 text-xs space-y-1">
+                        <span class="font-bold text-emerald-400 block">🌟 Flawless Distance Calculus!</span>
+                        <p class="text-emerald-200">You demonstrated a complete intuitive understanding of the Distance-from-Reality scale. You do not think in formulas; you think in verbal distance!</p>
+                    </div>
+                `);
+            }
+
+            container.className = "space-y-6 fade-in";
+            container.innerHTML = `
+                <div class="p-6 rounded-2xl bg-slate-950 border border-teal-500/30 text-center space-y-4 shadow-2xl">
+                    <div class="inline-block px-4 py-1.5 rounded-full bg-teal-500/20 text-teal-300 text-xs font-mono font-bold border border-teal-500/30">
+                        Diagnostic Assessment Complete
+                    </div>
+                    
+                    <div class="space-y-1">
+                        <p class="text-4xl font-extrabold text-white">${scorePct}%</p>
+                        <p class="text-xs text-slate-400">${correctCount} out of ${total} correct answers</p>
+                    </div>
+
+                    <div class="text-left space-y-3 pt-4 border-t border-slate-800">
+                        <h4 class="text-xs font-bold text-slate-300 uppercase tracking-wider">Personalized Error Diagnosis:</h4>
+                        <div class="space-y-2">
+                            ${patternAnalysis.join('')}
+                        </div>
+                    </div>
+
+                    <div class="pt-4 flex justify-center gap-3">
+                        <button onclick="startMasteryCheck()" class="px-4 py-2 rounded-xl bg-teal-600 hover:bg-teal-500 text-white text-xs font-semibold transition">
+                            Retake Assessment
+                        </button>
+                        <button onclick="selectScaleNode(0); document.getElementById('scale-heading').scrollIntoView({behavior:'smooth'})" class="px-4 py-2 rounded-xl border border-slate-700 bg-slate-900 text-slate-300 hover:text-white text-xs font-semibold transition">
+                            Review Reality Scale
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function initDrillBank() {
+            renderBankGridMatrix();
+            renderBankQuestion();
+            updateBankStats();
+        }
+
+        function getFilteredBankItems() {
+            if (bankState.activeFilter === 'all') return DRILL_BANK;
+            return DRILL_BANK.filter(item => item.type === bankState.activeFilter);
+        }
+
+        function setBankFilter(filterKey) {
+            bankState.activeFilter = filterKey;
+            bankState.currentIndex = 0;
+
+            const filters = ['all', 'zero', 'first', 'second', 'third', 'mixed'];
+            filters.forEach(f => {
+                const btn = document.getElementById(`filter-btn-${f}`);
+                if (f === filterKey) {
+                    btn.className = "px-3 py-1.5 rounded-lg text-xs font-bold transition bg-indigo-600 text-white";
+                } else {
+                    btn.className = "px-3 py-1.5 rounded-lg text-xs font-bold transition bg-slate-800 text-slate-300 hover:text-white";
+                }
+            });
+
+            renderBankQuestion();
+        }
+
+        function toggleBankGridDrawer() {
+            const drawer = document.getElementById('bank-grid-drawer');
+            bankState.drawerOpen = !bankState.drawerOpen;
+            if (bankState.drawerOpen) {
+                drawer.classList.remove('hidden');
+            } else {
+                drawer.classList.add('hidden');
+            }
+        }
+
+        function renderBankGridMatrix() {
+            const matrix = document.getElementById('bank-grid-matrix');
+            matrix.innerHTML = "";
+
+            DRILL_BANK.forEach((item, index) => {
+                const status = bankState.userAnswers[item.id];
+                let bgClass = "bg-slate-800 border-slate-700 text-slate-400";
+                
+                if (status) {
+                    if (status.isCorrect) bgClass = "bg-emerald-600 border-emerald-500 text-white font-bold";
+                    else bgClass = "bg-rose-600 border-rose-500 text-white font-bold";
+                }
+
+                const btn = document.createElement('button');
+                btn.className = `q-grid-btn h-8 rounded text-xs font-mono border flex items-center justify-center ${bgClass}`;
+                btn.innerText = item.id;
+                btn.onclick = () => {
+                    // Find position in filtered array
+                    const items = getFilteredBankItems();
+                    const pos = items.findIndex(x => x.id === item.id);
+                    if (pos !== -1) {
+                        bankState.currentIndex = pos;
+                        renderBankQuestion();
+                    } else {
+                        // If item not in current filter, reset filter to 'all'
+                        setBankFilter('all');
+                        bankState.currentIndex = index;
+                        renderBankQuestion();
+                    }
+                };
+                matrix.appendChild(btn);
+            });
+        }
+
+        function renderBankQuestion() {
+            const items = getFilteredBankItems();
+            if (items.length === 0) return;
+
+            if (bankState.currentIndex >= items.length) bankState.currentIndex = 0;
+            if (bankState.currentIndex < 0) bankState.currentIndex = items.length - 1;
+
+            const q = items[bankState.currentIndex];
+
+            // Update Headers & Indicators
+            document.getElementById('bank-q-number').innerText = `Drill #${q.id}`;
+            document.getElementById('bank-filtered-pos').innerText = `${bankState.currentIndex + 1} of ${items.length}`;
+
+            // Type badge color styling
+            const typeBadge = document.getElementById('bank-q-badge');
+            const typeMap = {
+                zero: { name: "Zero Conditional", style: "bg-slate-500/20 text-slate-300 border-slate-500/40" },
+                first: { name: "First Conditional", style: "bg-blue-500/20 text-blue-300 border-blue-500/40" },
+                second: { name: "Second Conditional", style: "bg-violet-500/20 text-violet-300 border-violet-500/40" },
+                third: { name: "Third Conditional", style: "bg-amber-500/20 text-amber-300 border-amber-500/40" },
+                mixed: { name: "Mixed Conditional", style: "bg-teal-500/20 text-teal-300 border-teal-500/40" }
+            };
+            const typeInfo = typeMap[q.type] || typeMap.zero;
+            typeBadge.innerText = typeInfo.name;
+            typeBadge.className = `text-xs font-mono font-bold px-2.5 py-0.5 rounded-full border ${typeInfo.style}`;
+
+            // Sentence Prompt
+            document.getElementById('bank-q-prompt').innerText = `"${q.q}"`;
+
+            // Options container
+            const optsContainer = document.getElementById('bank-q-options');
+            const existingAnswer = bankState.userAnswers[q.id];
+
+            optsContainer.innerHTML = "";
+            q.opts.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.id = `bank-opt-btn-${idx}`;
+                btn.className = "btn-option p-4 rounded-xl border border-slate-800 bg-slate-950/60 hover:bg-slate-800/80 text-left text-sm font-medium text-slate-200 transition flex items-center justify-between group";
+                btn.innerHTML = `
+                    <span>${opt}</span>
+                    <span class="w-6 h-6 rounded-full border border-slate-700 group-hover:border-indigo-400 flex items-center justify-center text-xs text-slate-500 font-mono">${String.fromCharCode(65 + idx)}</span>
+                `;
+
+                if (existingAnswer !== undefined) {
+                    btn.disabled = true;
+                    if (idx === q.ans) {
+                        btn.classList.add('border-emerald-500', 'bg-emerald-950/40', 'text-emerald-200');
+                    } else if (idx === existingAnswer.selected && !existingAnswer.isCorrect) {
+                        btn.classList.add('border-rose-500', 'bg-rose-950/40', 'text-rose-200');
+                    } else {
+                        btn.classList.add('opacity-40');
+                    }
+                } else {
+                    btn.onclick = () => answerBankQuestion(q.id, idx);
+                }
+
+                optsContainer.appendChild(btn);
+            });
+
+            // Feedback panel
+            const feedbackPanel = document.getElementById('bank-feedback');
+            if (existingAnswer !== undefined) {
+                feedbackPanel.classList.remove('hidden');
+                if (existingAnswer.isCorrect) {
+                    feedbackPanel.className = "p-5 rounded-xl border border-emerald-500/40 bg-emerald-950/30 text-emerald-100 fade-in space-y-2";
+                    feedbackPanel.innerHTML = `
+                        <div class="flex items-center gap-2 font-bold text-emerald-400 text-sm">✓ Correct Answer!</div>
+                        <p class="text-xs text-slate-200 leading-relaxed"><strong class="text-emerald-300">Grammar Logic:</strong> ${q.exp}</p>
+                    `;
+                } else {
+                    feedbackPanel.className = "p-5 rounded-xl border border-rose-500/40 bg-rose-950/30 text-rose-100 fade-in space-y-2";
+                    feedbackPanel.innerHTML = `
+                        <div class="flex items-center gap-2 font-bold text-rose-400 text-sm">✗ Incorrect</div>
+                        <p class="text-xs text-slate-200"><strong class="text-emerald-400">Correct Option:</strong> ${q.opts[q.ans]}</p>
+                        <p class="text-xs text-rose-200 leading-relaxed"><strong class="text-rose-300">Grammar Logic:</strong> ${q.exp}</p>
+                    `;
+                }
+            } else {
+                feedbackPanel.classList.add('hidden');
+            }
+        }
+
+        function answerBankQuestion(qId, selectedIdx) {
+            const q = DRILL_BANK.find(x => x.id === qId);
+            if (!q) return;
+
+            const isCorrect = selectedIdx === q.ans;
+            bankState.userAnswers[qId] = { selected: selectedIdx, isCorrect: isCorrect };
+
+            // Stats update
+            bankState.solvedCount = Object.keys(bankState.userAnswers).length;
+            if (isCorrect) {
+                bankState.correctCount++;
+                bankState.streak++;
+            } else {
+                bankState.streak = 0;
+            }
+
+            updateBankStats();
+            renderBankGridMatrix();
+            renderBankQuestion();
+        }
+
+        function navBankQuestion(dir) {
+            const items = getFilteredBankItems();
+            bankState.currentIndex += dir;
+            if (bankState.currentIndex >= items.length) bankState.currentIndex = 0;
+            if (bankState.currentIndex < 0) bankState.currentIndex = items.length - 1;
+            renderBankQuestion();
+        }
+
+        function skipBankQuestion() {
+            navBankQuestion(1);
+        }
+
+        function jumpRandomBankQuestion() {
+            const items = getFilteredBankItems();
+            bankState.currentIndex = Math.floor(Math.random() * items.length);
+            renderBankQuestion();
+        }
+
+        function updateBankStats() {
+            document.getElementById('bank-stat-solved').innerText = bankState.solvedCount;
+            
+            const accuracy = bankState.solvedCount > 0 
+                ? Math.round((bankState.correctCount / bankState.solvedCount) * 100) 
+                : 0;
+            document.getElementById('bank-stat-accuracy').innerText = `${accuracy}%`;
+            document.getElementById('bank-stat-streak').innerText = bankState.streak;
+
+            const pct = (bankState.solvedCount / 100) * 100;
+            document.getElementById('bank-stat-progress').style.width = `${pct}%`;
+        }
+
+        function resetTrainer() {
+            selectScaleNode(0);
+            switchLevel(1);
+            masteryState.active = false;
+            document.getElementById('mastery-container').innerHTML = `
+                <div class="text-center py-8 text-slate-400">
+                    <p class="text-sm">Ready to test your intuition across all conditional types?</p>
+                    <p class="text-xs text-slate-500 mt-1">Click "Start Mastery Test" to begin the diagnostic evaluation.</p>
+                </div>
+            `;
+
+            bankState.solvedCount = 0;
+            bankState.correctCount = 0;
+            bankState.streak = 0;
+            bankState.userAnswers = {};
+            bankState.currentIndex = 0;
+
+            updateBankStats();
+            renderBankGridMatrix();
+            renderBankQuestion();
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
